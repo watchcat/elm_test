@@ -37,7 +37,7 @@ view model
   = main_ []
     [ stylesheet
     , fontAwesomeCDN
-    , exampleNavbar
+    -- , exampleNavbar
     , exampleHero
     -- , exampleColumns
     -- , exampleTiles
