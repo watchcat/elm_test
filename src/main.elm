@@ -43,7 +43,7 @@ view model
     -- , exampleTiles
     -- , exampleLevel
     -- , exampleElementsAndComponents
-    , exampleMediaObject
+    -- , exampleMediaObject
     , exampleFooter
     ]
 
