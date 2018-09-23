@@ -4299,6 +4299,33 @@ function _Browser_load(url)
 		}
 	}));
 }
+var author$project$Example$NoOp = {$: 'NoOp'};
+var elm$core$Maybe$Just = function (a) {
+	return {$: 'Just', a: a};
+};
+var surprisetalk$elm_bulma$Bulma$Modifiers$Auto = {$: 'Auto'};
+var surprisetalk$elm_bulma$Bulma$Columns$columnModifiers = {
+	offset: surprisetalk$elm_bulma$Bulma$Modifiers$Auto,
+	widths: {
+		desktop: elm$core$Maybe$Just(surprisetalk$elm_bulma$Bulma$Modifiers$Auto),
+		fullHD: elm$core$Maybe$Just(surprisetalk$elm_bulma$Bulma$Modifiers$Auto),
+		mobile: elm$core$Maybe$Just(surprisetalk$elm_bulma$Bulma$Modifiers$Auto),
+		tablet: elm$core$Maybe$Just(surprisetalk$elm_bulma$Bulma$Modifiers$Auto),
+		widescreen: elm$core$Maybe$Just(surprisetalk$elm_bulma$Bulma$Modifiers$Auto)
+	}
+};
+var author$project$Example$myColumnModifiers = F2(
+	function (offset, width) {
+		var widths = surprisetalk$elm_bulma$Bulma$Columns$columnModifiers.widths;
+		return _Utils_update(
+			surprisetalk$elm_bulma$Bulma$Columns$columnModifiers,
+			{
+				offset: offset,
+				widths: _Utils_update(
+					widths,
+					{desktop: width, fullHD: width, tablet: width, widescreen: width})
+			});
+	});
 var elm$core$Basics$identity = function (x) {
 	return x;
 };
@@ -4562,9 +4589,6 @@ var elm$core$Array$initialize = F2(
 			return A5(elm$core$Array$initializeHelp, fn, initialFromIndex, len, _List_Nil, tail);
 		}
 	});
-var elm$core$Maybe$Just = function (a) {
-	return {$: 'Just', a: a};
-};
 var elm$core$Maybe$Nothing = {$: 'Nothing'};
 var elm$core$Result$Err = function (a) {
 	return {$: 'Err', a: a};
@@ -4792,8 +4816,6 @@ var elm$virtual_dom$VirtualDom$toHandlerInt = function (handler) {
 			return 3;
 	}
 };
-var elm$html$Html$a = _VirtualDom_node('a');
-var elm$html$Html$p = _VirtualDom_node('p');
 var elm$html$Html$strong = _VirtualDom_node('strong');
 var elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
 var elm$html$Html$text = elm$virtual_dom$VirtualDom$text;
@@ -4805,17 +4827,79 @@ var elm$html$Html$Attributes$stringProperty = F2(
 			key,
 			elm$json$Json$Encode$string(string));
 	});
-var elm$html$Html$Attributes$href = function (url) {
-	return A2(
-		elm$html$Html$Attributes$stringProperty,
-		'href',
-		_VirtualDom_noJavaScriptUri(url));
-};
 var elm$html$Html$Attributes$class = elm$html$Html$Attributes$stringProperty('className');
-var surprisetalk$elm_bulma$Bulma$Classes$content = elm$html$Html$Attributes$class('content');
-var surprisetalk$elm_bulma$Bulma$Classes$isLarge = elm$html$Html$Attributes$class('is-large');
-var surprisetalk$elm_bulma$Bulma$Classes$isMedium = elm$html$Html$Attributes$class('is-medium');
-var surprisetalk$elm_bulma$Bulma$Classes$isSmall = elm$html$Html$Attributes$class('is-small');
+var surprisetalk$elm_bulma$Bulma$Classes$column = elm$html$Html$Attributes$class('column');
+var surprisetalk$elm_bulma$Bulma$Classes$is01Desktop = elm$html$Html$Attributes$class('is-1-desktop');
+var surprisetalk$elm_bulma$Bulma$Classes$is01FullHD = elm$html$Html$Attributes$class('is-1-fullhd');
+var surprisetalk$elm_bulma$Bulma$Classes$is01Mobile = elm$html$Html$Attributes$class('is-1-mobile');
+var surprisetalk$elm_bulma$Bulma$Classes$is01Tablet = elm$html$Html$Attributes$class('is-1-tablet');
+var surprisetalk$elm_bulma$Bulma$Classes$is01Widescreen = elm$html$Html$Attributes$class('is-1-widescreen');
+var surprisetalk$elm_bulma$Bulma$Classes$is02Desktop = elm$html$Html$Attributes$class('is-2-desktop');
+var surprisetalk$elm_bulma$Bulma$Classes$is02FullHD = elm$html$Html$Attributes$class('is-2-fullhd');
+var surprisetalk$elm_bulma$Bulma$Classes$is02Mobile = elm$html$Html$Attributes$class('is-2-mobile');
+var surprisetalk$elm_bulma$Bulma$Classes$is02Tablet = elm$html$Html$Attributes$class('is-2-tablet');
+var surprisetalk$elm_bulma$Bulma$Classes$is02Widescreen = elm$html$Html$Attributes$class('is-2-widescreen');
+var surprisetalk$elm_bulma$Bulma$Classes$is03Desktop = elm$html$Html$Attributes$class('is-3-desktop');
+var surprisetalk$elm_bulma$Bulma$Classes$is03FullHD = elm$html$Html$Attributes$class('is-3-fullhd');
+var surprisetalk$elm_bulma$Bulma$Classes$is03Mobile = elm$html$Html$Attributes$class('is-3-mobile');
+var surprisetalk$elm_bulma$Bulma$Classes$is03Tablet = elm$html$Html$Attributes$class('is-3-tablet');
+var surprisetalk$elm_bulma$Bulma$Classes$is03Widescreen = elm$html$Html$Attributes$class('is-3-widescreen');
+var surprisetalk$elm_bulma$Bulma$Classes$is04Desktop = elm$html$Html$Attributes$class('is-4-desktop');
+var surprisetalk$elm_bulma$Bulma$Classes$is04FullHD = elm$html$Html$Attributes$class('is-4-fullhd');
+var surprisetalk$elm_bulma$Bulma$Classes$is04Mobile = elm$html$Html$Attributes$class('is-4-mobile');
+var surprisetalk$elm_bulma$Bulma$Classes$is04Tablet = elm$html$Html$Attributes$class('is-4-tablet');
+var surprisetalk$elm_bulma$Bulma$Classes$is04Widescreen = elm$html$Html$Attributes$class('is-4-widescreen');
+var surprisetalk$elm_bulma$Bulma$Classes$is05Desktop = elm$html$Html$Attributes$class('is-5-desktop');
+var surprisetalk$elm_bulma$Bulma$Classes$is05FullHD = elm$html$Html$Attributes$class('is-5-fullhd');
+var surprisetalk$elm_bulma$Bulma$Classes$is05Mobile = elm$html$Html$Attributes$class('is-5-mobile');
+var surprisetalk$elm_bulma$Bulma$Classes$is05Tablet = elm$html$Html$Attributes$class('is-5-tablet');
+var surprisetalk$elm_bulma$Bulma$Classes$is05Widescreen = elm$html$Html$Attributes$class('is-5-widescreen');
+var surprisetalk$elm_bulma$Bulma$Classes$is06Desktop = elm$html$Html$Attributes$class('is-6-desktop');
+var surprisetalk$elm_bulma$Bulma$Classes$is06FullHD = elm$html$Html$Attributes$class('is-6-fullhd');
+var surprisetalk$elm_bulma$Bulma$Classes$is06Mobile = elm$html$Html$Attributes$class('is-6-mobile');
+var surprisetalk$elm_bulma$Bulma$Classes$is06Tablet = elm$html$Html$Attributes$class('is-6-tablet');
+var surprisetalk$elm_bulma$Bulma$Classes$is06Widescreen = elm$html$Html$Attributes$class('is-6-widescreen');
+var surprisetalk$elm_bulma$Bulma$Classes$is07Desktop = elm$html$Html$Attributes$class('is-7-desktop');
+var surprisetalk$elm_bulma$Bulma$Classes$is07FullHD = elm$html$Html$Attributes$class('is-7-fullhd');
+var surprisetalk$elm_bulma$Bulma$Classes$is07Mobile = elm$html$Html$Attributes$class('is-7-mobile');
+var surprisetalk$elm_bulma$Bulma$Classes$is07Tablet = elm$html$Html$Attributes$class('is-7-tablet');
+var surprisetalk$elm_bulma$Bulma$Classes$is07Widescreen = elm$html$Html$Attributes$class('is-7-widescreen');
+var surprisetalk$elm_bulma$Bulma$Classes$is08Desktop = elm$html$Html$Attributes$class('is-8-desktop');
+var surprisetalk$elm_bulma$Bulma$Classes$is08FullHD = elm$html$Html$Attributes$class('is-8-fullhd');
+var surprisetalk$elm_bulma$Bulma$Classes$is08Mobile = elm$html$Html$Attributes$class('is-8-mobile');
+var surprisetalk$elm_bulma$Bulma$Classes$is08Tablet = elm$html$Html$Attributes$class('is-8-tablet');
+var surprisetalk$elm_bulma$Bulma$Classes$is08Widescreen = elm$html$Html$Attributes$class('is-8-widescreen');
+var surprisetalk$elm_bulma$Bulma$Classes$is09Desktop = elm$html$Html$Attributes$class('is-9-desktop');
+var surprisetalk$elm_bulma$Bulma$Classes$is09FullHD = elm$html$Html$Attributes$class('is-9-fullhd');
+var surprisetalk$elm_bulma$Bulma$Classes$is09Mobile = elm$html$Html$Attributes$class('is-9-mobile');
+var surprisetalk$elm_bulma$Bulma$Classes$is09Tablet = elm$html$Html$Attributes$class('is-9-tablet');
+var surprisetalk$elm_bulma$Bulma$Classes$is09Widescreen = elm$html$Html$Attributes$class('is-9-widescreen');
+var surprisetalk$elm_bulma$Bulma$Classes$is10Desktop = elm$html$Html$Attributes$class('is-10-desktop');
+var surprisetalk$elm_bulma$Bulma$Classes$is10FullHD = elm$html$Html$Attributes$class('is-10-fullhd');
+var surprisetalk$elm_bulma$Bulma$Classes$is10Mobile = elm$html$Html$Attributes$class('is-10-mobile');
+var surprisetalk$elm_bulma$Bulma$Classes$is10Tablet = elm$html$Html$Attributes$class('is-10-tablet');
+var surprisetalk$elm_bulma$Bulma$Classes$is10Widescreen = elm$html$Html$Attributes$class('is-10-widescreen');
+var surprisetalk$elm_bulma$Bulma$Classes$is11Desktop = elm$html$Html$Attributes$class('is-11-desktop');
+var surprisetalk$elm_bulma$Bulma$Classes$is11FullHD = elm$html$Html$Attributes$class('is-11-fullhd');
+var surprisetalk$elm_bulma$Bulma$Classes$is11Mobile = elm$html$Html$Attributes$class('is-11-mobile');
+var surprisetalk$elm_bulma$Bulma$Classes$is11Tablet = elm$html$Html$Attributes$class('is-11-tablet');
+var surprisetalk$elm_bulma$Bulma$Classes$is11Widescreen = elm$html$Html$Attributes$class('is-11-widescreen');
+var surprisetalk$elm_bulma$Bulma$Classes$isNarrowDesktop = elm$html$Html$Attributes$class('is-narrow-desktop');
+var surprisetalk$elm_bulma$Bulma$Classes$isNarrowFullHD = elm$html$Html$Attributes$class('is-narrow-fullhd');
+var surprisetalk$elm_bulma$Bulma$Classes$isNarrowMobile = elm$html$Html$Attributes$class('is-narrow-mobile');
+var surprisetalk$elm_bulma$Bulma$Classes$isNarrowTablet = elm$html$Html$Attributes$class('is-narrow-tablet');
+var surprisetalk$elm_bulma$Bulma$Classes$isNarrowWidescreen = elm$html$Html$Attributes$class('is-narrow-widescreen');
+var surprisetalk$elm_bulma$Bulma$Classes$isOffset01 = elm$html$Html$Attributes$class('is-offset-1');
+var surprisetalk$elm_bulma$Bulma$Classes$isOffset02 = elm$html$Html$Attributes$class('is-offset-2');
+var surprisetalk$elm_bulma$Bulma$Classes$isOffset03 = elm$html$Html$Attributes$class('is-offset-3');
+var surprisetalk$elm_bulma$Bulma$Classes$isOffset04 = elm$html$Html$Attributes$class('is-offset-4');
+var surprisetalk$elm_bulma$Bulma$Classes$isOffset05 = elm$html$Html$Attributes$class('is-offset-5');
+var surprisetalk$elm_bulma$Bulma$Classes$isOffset06 = elm$html$Html$Attributes$class('is-offset-6');
+var surprisetalk$elm_bulma$Bulma$Classes$isOffset07 = elm$html$Html$Attributes$class('is-offset-7');
+var surprisetalk$elm_bulma$Bulma$Classes$isOffset08 = elm$html$Html$Attributes$class('is-offset-8');
+var surprisetalk$elm_bulma$Bulma$Classes$isOffset09 = elm$html$Html$Attributes$class('is-offset-9');
+var surprisetalk$elm_bulma$Bulma$Classes$isOffset10 = elm$html$Html$Attributes$class('is-offset-10');
+var surprisetalk$elm_bulma$Bulma$Classes$isOffset11 = elm$html$Html$Attributes$class('is-offset-11');
 var surprisetalk$elm_bulma$Bulma$Classes$none = elm$html$Html$Attributes$class('');
 var elm$virtual_dom$VirtualDom$node = function (tag) {
 	return _VirtualDom_node(
@@ -4829,6 +4913,536 @@ var surprisetalk$elm_bulma$Helpers$node = F3(
 			tag,
 			_Utils_ap(attrs, attrs_));
 	});
+var surprisetalk$elm_bulma$Bulma$Columns$column = function (_n0) {
+	var widths = _n0.widths;
+	var offset = _n0.offset;
+	return A2(
+		surprisetalk$elm_bulma$Helpers$node,
+		'div',
+		_List_fromArray(
+			[
+				surprisetalk$elm_bulma$Bulma$Classes$column,
+				function () {
+				var _n1 = widths.mobile;
+				if (_n1.$ === 'Just') {
+					switch (_n1.a.$) {
+						case 'Auto':
+							var _n2 = _n1.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$none;
+						case 'Width1':
+							var _n3 = _n1.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is01Mobile;
+						case 'Width2':
+							var _n4 = _n1.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is02Mobile;
+						case 'Width3':
+							var _n5 = _n1.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is03Mobile;
+						case 'Width4':
+							var _n6 = _n1.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is04Mobile;
+						case 'Width5':
+							var _n7 = _n1.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is05Mobile;
+						case 'Width6':
+							var _n8 = _n1.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is06Mobile;
+						case 'Width7':
+							var _n9 = _n1.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is07Mobile;
+						case 'Width8':
+							var _n10 = _n1.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is08Mobile;
+						case 'Width9':
+							var _n11 = _n1.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is09Mobile;
+						case 'Width10':
+							var _n12 = _n1.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is10Mobile;
+						default:
+							var _n13 = _n1.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is11Mobile;
+					}
+				} else {
+					return surprisetalk$elm_bulma$Bulma$Classes$isNarrowMobile;
+				}
+			}(),
+				function () {
+				var _n14 = widths.tablet;
+				if (_n14.$ === 'Just') {
+					switch (_n14.a.$) {
+						case 'Auto':
+							var _n15 = _n14.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$none;
+						case 'Width1':
+							var _n16 = _n14.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is01Tablet;
+						case 'Width2':
+							var _n17 = _n14.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is02Tablet;
+						case 'Width3':
+							var _n18 = _n14.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is03Tablet;
+						case 'Width4':
+							var _n19 = _n14.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is04Tablet;
+						case 'Width5':
+							var _n20 = _n14.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is05Tablet;
+						case 'Width6':
+							var _n21 = _n14.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is06Tablet;
+						case 'Width7':
+							var _n22 = _n14.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is07Tablet;
+						case 'Width8':
+							var _n23 = _n14.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is08Tablet;
+						case 'Width9':
+							var _n24 = _n14.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is09Tablet;
+						case 'Width10':
+							var _n25 = _n14.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is10Tablet;
+						default:
+							var _n26 = _n14.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is11Tablet;
+					}
+				} else {
+					return surprisetalk$elm_bulma$Bulma$Classes$isNarrowTablet;
+				}
+			}(),
+				function () {
+				var _n27 = widths.desktop;
+				if (_n27.$ === 'Just') {
+					switch (_n27.a.$) {
+						case 'Auto':
+							var _n28 = _n27.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$none;
+						case 'Width1':
+							var _n29 = _n27.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is01Desktop;
+						case 'Width2':
+							var _n30 = _n27.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is02Desktop;
+						case 'Width3':
+							var _n31 = _n27.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is03Desktop;
+						case 'Width4':
+							var _n32 = _n27.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is04Desktop;
+						case 'Width5':
+							var _n33 = _n27.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is05Desktop;
+						case 'Width6':
+							var _n34 = _n27.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is06Desktop;
+						case 'Width7':
+							var _n35 = _n27.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is07Desktop;
+						case 'Width8':
+							var _n36 = _n27.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is08Desktop;
+						case 'Width9':
+							var _n37 = _n27.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is09Desktop;
+						case 'Width10':
+							var _n38 = _n27.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is10Desktop;
+						default:
+							var _n39 = _n27.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is11Desktop;
+					}
+				} else {
+					return surprisetalk$elm_bulma$Bulma$Classes$isNarrowDesktop;
+				}
+			}(),
+				function () {
+				var _n40 = widths.widescreen;
+				if (_n40.$ === 'Just') {
+					switch (_n40.a.$) {
+						case 'Auto':
+							var _n41 = _n40.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$none;
+						case 'Width1':
+							var _n42 = _n40.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is01Widescreen;
+						case 'Width2':
+							var _n43 = _n40.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is02Widescreen;
+						case 'Width3':
+							var _n44 = _n40.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is03Widescreen;
+						case 'Width4':
+							var _n45 = _n40.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is04Widescreen;
+						case 'Width5':
+							var _n46 = _n40.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is05Widescreen;
+						case 'Width6':
+							var _n47 = _n40.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is06Widescreen;
+						case 'Width7':
+							var _n48 = _n40.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is07Widescreen;
+						case 'Width8':
+							var _n49 = _n40.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is08Widescreen;
+						case 'Width9':
+							var _n50 = _n40.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is09Widescreen;
+						case 'Width10':
+							var _n51 = _n40.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is10Widescreen;
+						default:
+							var _n52 = _n40.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is11Widescreen;
+					}
+				} else {
+					return surprisetalk$elm_bulma$Bulma$Classes$isNarrowWidescreen;
+				}
+			}(),
+				function () {
+				var _n53 = widths.fullHD;
+				if (_n53.$ === 'Just') {
+					switch (_n53.a.$) {
+						case 'Auto':
+							var _n54 = _n53.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$none;
+						case 'Width1':
+							var _n55 = _n53.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is01FullHD;
+						case 'Width2':
+							var _n56 = _n53.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is02FullHD;
+						case 'Width3':
+							var _n57 = _n53.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is03FullHD;
+						case 'Width4':
+							var _n58 = _n53.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is04FullHD;
+						case 'Width5':
+							var _n59 = _n53.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is05FullHD;
+						case 'Width6':
+							var _n60 = _n53.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is06FullHD;
+						case 'Width7':
+							var _n61 = _n53.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is07FullHD;
+						case 'Width8':
+							var _n62 = _n53.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is08FullHD;
+						case 'Width9':
+							var _n63 = _n53.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is09FullHD;
+						case 'Width10':
+							var _n64 = _n53.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is10FullHD;
+						default:
+							var _n65 = _n53.a;
+							return surprisetalk$elm_bulma$Bulma$Classes$is11FullHD;
+					}
+				} else {
+					return surprisetalk$elm_bulma$Bulma$Classes$isNarrowFullHD;
+				}
+			}(),
+				function () {
+				switch (offset.$) {
+					case 'Auto':
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					case 'Width1':
+						return surprisetalk$elm_bulma$Bulma$Classes$isOffset01;
+					case 'Width2':
+						return surprisetalk$elm_bulma$Bulma$Classes$isOffset02;
+					case 'Width3':
+						return surprisetalk$elm_bulma$Bulma$Classes$isOffset03;
+					case 'Width4':
+						return surprisetalk$elm_bulma$Bulma$Classes$isOffset04;
+					case 'Width5':
+						return surprisetalk$elm_bulma$Bulma$Classes$isOffset05;
+					case 'Width6':
+						return surprisetalk$elm_bulma$Bulma$Classes$isOffset06;
+					case 'Width7':
+						return surprisetalk$elm_bulma$Bulma$Classes$isOffset07;
+					case 'Width8':
+						return surprisetalk$elm_bulma$Bulma$Classes$isOffset08;
+					case 'Width9':
+						return surprisetalk$elm_bulma$Bulma$Classes$isOffset09;
+					case 'Width10':
+						return surprisetalk$elm_bulma$Bulma$Classes$isOffset10;
+					default:
+						return surprisetalk$elm_bulma$Bulma$Classes$isOffset11;
+				}
+			}()
+			]));
+};
+var surprisetalk$elm_bulma$Bulma$Classes$columns = elm$html$Html$Attributes$class('columns');
+var surprisetalk$elm_bulma$Bulma$Classes$is0 = elm$html$Html$Attributes$class('is-0');
+var surprisetalk$elm_bulma$Bulma$Classes$is1 = elm$html$Html$Attributes$class('is-1');
+var surprisetalk$elm_bulma$Bulma$Classes$is2 = elm$html$Html$Attributes$class('is-2');
+var surprisetalk$elm_bulma$Bulma$Classes$is4 = elm$html$Html$Attributes$class('is-4');
+var surprisetalk$elm_bulma$Bulma$Classes$is5 = elm$html$Html$Attributes$class('is-5');
+var surprisetalk$elm_bulma$Bulma$Classes$is6 = elm$html$Html$Attributes$class('is-6');
+var surprisetalk$elm_bulma$Bulma$Classes$is7 = elm$html$Html$Attributes$class('is-7');
+var surprisetalk$elm_bulma$Bulma$Classes$is8 = elm$html$Html$Attributes$class('is-8');
+var surprisetalk$elm_bulma$Bulma$Classes$isCentered = elm$html$Html$Attributes$class('is-centered');
+var surprisetalk$elm_bulma$Bulma$Classes$isDesktop = elm$html$Html$Attributes$class('is-desktop');
+var surprisetalk$elm_bulma$Bulma$Classes$isGapless = elm$html$Html$Attributes$class('is-gapless');
+var surprisetalk$elm_bulma$Bulma$Classes$isMobile = elm$html$Html$Attributes$class('is-mobile');
+var surprisetalk$elm_bulma$Bulma$Classes$isMultiline = elm$html$Html$Attributes$class('is-multiline');
+var surprisetalk$elm_bulma$Bulma$Columns$columns = function (_n0) {
+	var centered = _n0.centered;
+	var multiline = _n0.multiline;
+	var gap = _n0.gap;
+	var display = _n0.display;
+	return A2(
+		surprisetalk$elm_bulma$Helpers$node,
+		'div',
+		_List_fromArray(
+			[
+				surprisetalk$elm_bulma$Bulma$Classes$columns,
+				function () {
+				if (centered) {
+					return surprisetalk$elm_bulma$Bulma$Classes$isCentered;
+				} else {
+					return surprisetalk$elm_bulma$Bulma$Classes$none;
+				}
+			}(),
+				function () {
+				if (multiline) {
+					return surprisetalk$elm_bulma$Bulma$Classes$isMultiline;
+				} else {
+					return surprisetalk$elm_bulma$Bulma$Classes$none;
+				}
+			}(),
+				function () {
+				if (gap.$ === 'Gap0') {
+					return surprisetalk$elm_bulma$Bulma$Classes$isGapless;
+				} else {
+					return surprisetalk$elm_bulma$Bulma$Classes$none;
+				}
+			}(),
+				function () {
+				switch (gap.$) {
+					case 'Gap0':
+						return surprisetalk$elm_bulma$Bulma$Classes$is0;
+					case 'Gap1':
+						return surprisetalk$elm_bulma$Bulma$Classes$is1;
+					case 'Gap2':
+						return surprisetalk$elm_bulma$Bulma$Classes$is2;
+					case 'Gap3':
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					case 'Gap4':
+						return surprisetalk$elm_bulma$Bulma$Classes$is4;
+					case 'Gap5':
+						return surprisetalk$elm_bulma$Bulma$Classes$is5;
+					case 'Gap6':
+						return surprisetalk$elm_bulma$Bulma$Classes$is6;
+					case 'Gap7':
+						return surprisetalk$elm_bulma$Bulma$Classes$is7;
+					default:
+						return surprisetalk$elm_bulma$Bulma$Classes$is8;
+				}
+			}(),
+				function () {
+				switch (display.$) {
+					case 'MobileAndBeyond':
+						return surprisetalk$elm_bulma$Bulma$Classes$isMobile;
+					case 'TabletAndBeyond':
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					default:
+						return surprisetalk$elm_bulma$Bulma$Classes$isDesktop;
+				}
+			}()
+			]));
+};
+var surprisetalk$elm_bulma$Bulma$Columns$Gap3 = {$: 'Gap3'};
+var surprisetalk$elm_bulma$Bulma$Columns$TabletAndBeyond = {$: 'TabletAndBeyond'};
+var surprisetalk$elm_bulma$Bulma$Columns$columnsModifiers = {centered: false, display: surprisetalk$elm_bulma$Bulma$Columns$TabletAndBeyond, gap: surprisetalk$elm_bulma$Bulma$Columns$Gap3, multiline: false};
+var surprisetalk$elm_bulma$Bulma$Elements$H4 = {$: 'H4'};
+var surprisetalk$elm_bulma$Bulma$Classes$is3 = elm$html$Html$Attributes$class('is-3');
+var surprisetalk$elm_bulma$Bulma$Classes$title = elm$html$Html$Attributes$class('title');
+var surprisetalk$elm_bulma$Bulma$Elements$title = function (size) {
+	return A2(
+		surprisetalk$elm_bulma$Helpers$node,
+		function () {
+			switch (size.$) {
+				case 'H1':
+					return 'h1';
+				case 'H2':
+					return 'h2';
+				case 'H3':
+					return 'h3';
+				case 'H4':
+					return 'h4';
+				case 'H5':
+					return 'h5';
+				default:
+					return 'h6';
+			}
+		}(),
+		_List_fromArray(
+			[
+				surprisetalk$elm_bulma$Bulma$Classes$title,
+				function () {
+				switch (size.$) {
+					case 'H1':
+						return surprisetalk$elm_bulma$Bulma$Classes$is1;
+					case 'H2':
+						return surprisetalk$elm_bulma$Bulma$Classes$is2;
+					case 'H3':
+						return surprisetalk$elm_bulma$Bulma$Classes$is3;
+					case 'H4':
+						return surprisetalk$elm_bulma$Bulma$Classes$is4;
+					case 'H5':
+						return surprisetalk$elm_bulma$Bulma$Classes$is5;
+					default:
+						return surprisetalk$elm_bulma$Bulma$Classes$is6;
+				}
+			}()
+			]));
+};
+var surprisetalk$elm_bulma$Bulma$Modifiers$Width2 = {$: 'Width2'};
+var author$project$Example$demoArticle = F2(
+	function (aTitle, someHtmls) {
+		return A3(
+			surprisetalk$elm_bulma$Bulma$Columns$columns,
+			surprisetalk$elm_bulma$Bulma$Columns$columnsModifiers,
+			_List_Nil,
+			_List_fromArray(
+				[
+					A3(
+					surprisetalk$elm_bulma$Bulma$Columns$column,
+					A2(
+						author$project$Example$myColumnModifiers,
+						surprisetalk$elm_bulma$Bulma$Modifiers$Auto,
+						elm$core$Maybe$Just(surprisetalk$elm_bulma$Bulma$Modifiers$Width2)),
+					_List_Nil,
+					_List_fromArray(
+						[
+							A3(
+							surprisetalk$elm_bulma$Bulma$Elements$title,
+							surprisetalk$elm_bulma$Bulma$Elements$H4,
+							_List_Nil,
+							_List_fromArray(
+								[
+									A2(
+									elm$html$Html$strong,
+									_List_Nil,
+									_List_fromArray(
+										[
+											elm$html$Html$text(aTitle)
+										]))
+								]))
+						])),
+					A3(
+					surprisetalk$elm_bulma$Bulma$Columns$column,
+					A2(
+						author$project$Example$myColumnModifiers,
+						surprisetalk$elm_bulma$Bulma$Modifiers$Auto,
+						elm$core$Maybe$Just(surprisetalk$elm_bulma$Bulma$Modifiers$Auto)),
+					_List_Nil,
+					someHtmls)
+				]));
+	});
+var surprisetalk$elm_bulma$Bulma$Classes$subtitle = elm$html$Html$Attributes$class('subtitle');
+var surprisetalk$elm_bulma$Bulma$Elements$subtitle = function (size) {
+	return A2(
+		surprisetalk$elm_bulma$Helpers$node,
+		function () {
+			switch (size.$) {
+				case 'H1':
+					return 'h1';
+				case 'H2':
+					return 'h2';
+				case 'H3':
+					return 'h3';
+				case 'H4':
+					return 'h4';
+				case 'H5':
+					return 'h5';
+				default:
+					return 'h6';
+			}
+		}(),
+		_List_fromArray(
+			[
+				surprisetalk$elm_bulma$Bulma$Classes$subtitle,
+				function () {
+				switch (size.$) {
+					case 'H1':
+						return surprisetalk$elm_bulma$Bulma$Classes$is1;
+					case 'H2':
+						return surprisetalk$elm_bulma$Bulma$Classes$is2;
+					case 'H3':
+						return surprisetalk$elm_bulma$Bulma$Classes$is3;
+					case 'H4':
+						return surprisetalk$elm_bulma$Bulma$Classes$is4;
+					case 'H5':
+						return surprisetalk$elm_bulma$Bulma$Classes$is5;
+					default:
+						return surprisetalk$elm_bulma$Bulma$Classes$is6;
+				}
+			}()
+			]));
+};
+var surprisetalk$elm_bulma$Bulma$Modifiers$Width3 = {$: 'Width3'};
+var author$project$Example$demoSection = F3(
+	function (aSubtitle, someAttrs, someHtmls) {
+		return A3(
+			surprisetalk$elm_bulma$Bulma$Columns$columns,
+			surprisetalk$elm_bulma$Bulma$Columns$columnsModifiers,
+			someAttrs,
+			_List_fromArray(
+				[
+					A3(
+					surprisetalk$elm_bulma$Bulma$Columns$column,
+					A2(
+						author$project$Example$myColumnModifiers,
+						surprisetalk$elm_bulma$Bulma$Modifiers$Auto,
+						elm$core$Maybe$Just(surprisetalk$elm_bulma$Bulma$Modifiers$Width3)),
+					_List_Nil,
+					_List_fromArray(
+						[
+							A3(
+							surprisetalk$elm_bulma$Bulma$Elements$subtitle,
+							surprisetalk$elm_bulma$Bulma$Elements$H4,
+							_List_Nil,
+							_List_fromArray(
+								[
+									elm$html$Html$text(aSubtitle)
+								]))
+						])),
+					A3(
+					surprisetalk$elm_bulma$Bulma$Columns$column,
+					A2(
+						author$project$Example$myColumnModifiers,
+						surprisetalk$elm_bulma$Bulma$Modifiers$Auto,
+						elm$core$Maybe$Just(surprisetalk$elm_bulma$Bulma$Modifiers$Auto)),
+					_List_Nil,
+					someHtmls)
+				]));
+	});
+var elm$html$Html$br = _VirtualDom_node('br');
+var elm$html$Html$i = _VirtualDom_node('i');
+var elm$html$Html$img = _VirtualDom_node('img');
+var elm$html$Html$p = _VirtualDom_node('p');
+var elm$html$Html$small = _VirtualDom_node('small');
+var elm$html$Html$Attributes$src = function (url) {
+	return A2(
+		elm$html$Html$Attributes$stringProperty,
+		'src',
+		_VirtualDom_noJavaScriptOrHtmlUri(url));
+};
+var surprisetalk$elm_bulma$Bulma$Elements$OneByOne = function (a) {
+	return {$: 'OneByOne', a: a};
+};
+var surprisetalk$elm_bulma$Bulma$Elements$X64 = {$: 'X64'};
+var surprisetalk$elm_bulma$Bulma$Classes$content = elm$html$Html$Attributes$class('content');
+var surprisetalk$elm_bulma$Bulma$Classes$isLarge = elm$html$Html$Attributes$class('is-large');
+var surprisetalk$elm_bulma$Bulma$Classes$isMedium = elm$html$Html$Attributes$class('is-medium');
+var surprisetalk$elm_bulma$Bulma$Classes$isSmall = elm$html$Html$Attributes$class('is-small');
 var surprisetalk$elm_bulma$Bulma$Elements$content = function (size) {
 	return A2(
 		surprisetalk$elm_bulma$Helpers$node,
@@ -4850,19 +5464,3292 @@ var surprisetalk$elm_bulma$Bulma$Elements$content = function (size) {
 			}()
 			]));
 };
+var surprisetalk$elm_bulma$Bulma$Classes$icon = elm$html$Html$Attributes$class('icon');
+var surprisetalk$elm_bulma$Bulma$Elements$icon = function (size) {
+	return A2(
+		surprisetalk$elm_bulma$Helpers$node,
+		'span',
+		_List_fromArray(
+			[
+				surprisetalk$elm_bulma$Bulma$Classes$icon,
+				function () {
+				switch (size.$) {
+					case 'Small':
+						return surprisetalk$elm_bulma$Bulma$Classes$isSmall;
+					case 'Standard':
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					case 'Medium':
+						return surprisetalk$elm_bulma$Bulma$Classes$isMedium;
+					default:
+						return surprisetalk$elm_bulma$Bulma$Classes$isLarge;
+				}
+			}()
+			]));
+};
+var surprisetalk$elm_bulma$Bulma$Classes$image = elm$html$Html$Attributes$class('image');
+var surprisetalk$elm_bulma$Bulma$Classes$is128x128 = elm$html$Html$Attributes$class('is-128x128');
+var surprisetalk$elm_bulma$Bulma$Classes$is16by9 = elm$html$Html$Attributes$class('is-16by9');
+var surprisetalk$elm_bulma$Bulma$Classes$is16x16 = elm$html$Html$Attributes$class('is-16x16');
+var surprisetalk$elm_bulma$Bulma$Classes$is1by1 = elm$html$Html$Attributes$class('is-1by1');
+var surprisetalk$elm_bulma$Bulma$Classes$is24x24 = elm$html$Html$Attributes$class('is-24x24');
+var surprisetalk$elm_bulma$Bulma$Classes$is2by1 = elm$html$Html$Attributes$class('is-2by1');
+var surprisetalk$elm_bulma$Bulma$Classes$is32x32 = elm$html$Html$Attributes$class('is-32x32');
+var surprisetalk$elm_bulma$Bulma$Classes$is3by2 = elm$html$Html$Attributes$class('is-3by2');
+var surprisetalk$elm_bulma$Bulma$Classes$is48x48 = elm$html$Html$Attributes$class('is-48x48');
+var surprisetalk$elm_bulma$Bulma$Classes$is4by3 = elm$html$Html$Attributes$class('is-4by3');
+var surprisetalk$elm_bulma$Bulma$Classes$is64x64 = elm$html$Html$Attributes$class('is-64x64');
+var surprisetalk$elm_bulma$Bulma$Classes$is96x96 = elm$html$Html$Attributes$class('is-96x96');
+var surprisetalk$elm_bulma$Bulma$Elements$image = function (shape) {
+	return A2(
+		surprisetalk$elm_bulma$Helpers$node,
+		'figure',
+		_List_fromArray(
+			[
+				surprisetalk$elm_bulma$Bulma$Classes$image,
+				function () {
+				switch (shape.$) {
+					case 'OneByOne':
+						switch (shape.a.$) {
+							case 'Unbounded':
+								var _n1 = shape.a;
+								return surprisetalk$elm_bulma$Bulma$Classes$is1by1;
+							case 'X16':
+								var _n2 = shape.a;
+								return surprisetalk$elm_bulma$Bulma$Classes$is16x16;
+							case 'X24':
+								var _n3 = shape.a;
+								return surprisetalk$elm_bulma$Bulma$Classes$is24x24;
+							case 'X32':
+								var _n4 = shape.a;
+								return surprisetalk$elm_bulma$Bulma$Classes$is32x32;
+							case 'X48':
+								var _n5 = shape.a;
+								return surprisetalk$elm_bulma$Bulma$Classes$is48x48;
+							case 'X64':
+								var _n6 = shape.a;
+								return surprisetalk$elm_bulma$Bulma$Classes$is64x64;
+							case 'X96':
+								var _n7 = shape.a;
+								return surprisetalk$elm_bulma$Bulma$Classes$is96x96;
+							default:
+								var _n8 = shape.a;
+								return surprisetalk$elm_bulma$Bulma$Classes$is128x128;
+						}
+					case 'FourByThree':
+						return surprisetalk$elm_bulma$Bulma$Classes$is4by3;
+					case 'ThreeByTwo':
+						return surprisetalk$elm_bulma$Bulma$Classes$is3by2;
+					case 'SixteenByNine':
+						return surprisetalk$elm_bulma$Bulma$Classes$is16by9;
+					case 'TwoByOne':
+						return surprisetalk$elm_bulma$Bulma$Classes$is2by1;
+					default:
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+				}
+			}()
+			]));
+};
+var surprisetalk$elm_bulma$Bulma$Classes$isHorizontal = elm$html$Html$Attributes$class('is-horizontal');
+var surprisetalk$elm_bulma$Bulma$Classes$level = elm$html$Html$Attributes$class('level');
+var surprisetalk$elm_bulma$Bulma$Layout$horizontalLevel = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'nav',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$level, surprisetalk$elm_bulma$Bulma$Classes$isHorizontal]));
+var surprisetalk$elm_bulma$Bulma$Classes$levelItem = elm$html$Html$Attributes$class('level-item');
+var surprisetalk$elm_bulma$Bulma$Layout$levelItemLink = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'a',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$levelItem]));
+var surprisetalk$elm_bulma$Bulma$Classes$levelLeft = elm$html$Html$Attributes$class('level-left');
+var surprisetalk$elm_bulma$Bulma$Layout$levelLeft = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'div',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$levelLeft]));
+var surprisetalk$elm_bulma$Bulma$Classes$media = elm$html$Html$Attributes$class('media');
+var surprisetalk$elm_bulma$Bulma$Layout$media = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'article',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$media]));
+var surprisetalk$elm_bulma$Bulma$Classes$mediaContent = elm$html$Html$Attributes$class('media-content');
+var surprisetalk$elm_bulma$Bulma$Layout$mediaContent = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'div',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$mediaContent]));
+var surprisetalk$elm_bulma$Bulma$Classes$mediaLeft = elm$html$Html$Attributes$class('media-left');
+var surprisetalk$elm_bulma$Bulma$Layout$mediaLeft = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'div',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$mediaLeft]));
+var surprisetalk$elm_bulma$Bulma$Modifiers$Small = {$: 'Small'};
+var surprisetalk$elm_bulma$Bulma$Modifiers$Standard = {$: 'Standard'};
+var author$project$Example$exampleMediaObject = A2(
+	surprisetalk$elm_bulma$Bulma$Layout$media,
+	_List_Nil,
+	_List_fromArray(
+		[
+			A2(
+			surprisetalk$elm_bulma$Bulma$Layout$mediaLeft,
+			_List_Nil,
+			_List_fromArray(
+				[
+					A3(
+					surprisetalk$elm_bulma$Bulma$Elements$image,
+					surprisetalk$elm_bulma$Bulma$Elements$OneByOne(surprisetalk$elm_bulma$Bulma$Elements$X64),
+					_List_Nil,
+					_List_fromArray(
+						[
+							A2(
+							elm$html$Html$img,
+							_List_fromArray(
+								[
+									elm$html$Html$Attributes$src('https://bulma.io/images/placeholders/128x128.png')
+								]),
+							_List_Nil)
+						]))
+				])),
+			A2(
+			surprisetalk$elm_bulma$Bulma$Layout$mediaContent,
+			_List_Nil,
+			_List_fromArray(
+				[
+					A3(
+					surprisetalk$elm_bulma$Bulma$Elements$content,
+					surprisetalk$elm_bulma$Bulma$Modifiers$Standard,
+					_List_Nil,
+					_List_fromArray(
+						[
+							A2(
+							elm$html$Html$p,
+							_List_Nil,
+							_List_fromArray(
+								[
+									A2(
+									elm$html$Html$strong,
+									_List_Nil,
+									_List_fromArray(
+										[
+											elm$html$Html$text('John Smith')
+										])),
+									elm$html$Html$text(' '),
+									A2(
+									elm$html$Html$small,
+									_List_Nil,
+									_List_fromArray(
+										[
+											elm$html$Html$text('@johnsmith')
+										])),
+									elm$html$Html$text(' '),
+									A2(
+									elm$html$Html$small,
+									_List_Nil,
+									_List_fromArray(
+										[
+											elm$html$Html$text('31m')
+										])),
+									A2(elm$html$Html$br, _List_Nil, _List_Nil),
+									elm$html$Html$text('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.')
+								]))
+						])),
+					A2(
+					surprisetalk$elm_bulma$Bulma$Layout$horizontalLevel,
+					_List_Nil,
+					_List_fromArray(
+						[
+							A2(
+							surprisetalk$elm_bulma$Bulma$Layout$levelLeft,
+							_List_Nil,
+							_List_fromArray(
+								[
+									A2(
+									surprisetalk$elm_bulma$Bulma$Layout$levelItemLink,
+									_List_Nil,
+									_List_fromArray(
+										[
+											A3(
+											surprisetalk$elm_bulma$Bulma$Elements$icon,
+											surprisetalk$elm_bulma$Bulma$Modifiers$Small,
+											_List_Nil,
+											_List_fromArray(
+												[
+													A2(
+													elm$html$Html$i,
+													_List_fromArray(
+														[
+															elm$html$Html$Attributes$class('fa fa-reply')
+														]),
+													_List_Nil)
+												]))
+										])),
+									A2(
+									surprisetalk$elm_bulma$Bulma$Layout$levelItemLink,
+									_List_Nil,
+									_List_fromArray(
+										[
+											A3(
+											surprisetalk$elm_bulma$Bulma$Elements$icon,
+											surprisetalk$elm_bulma$Bulma$Modifiers$Small,
+											_List_Nil,
+											_List_fromArray(
+												[
+													A2(
+													elm$html$Html$i,
+													_List_fromArray(
+														[
+															elm$html$Html$Attributes$class('fa fa-retweet')
+														]),
+													_List_Nil)
+												]))
+										])),
+									A2(
+									surprisetalk$elm_bulma$Bulma$Layout$levelItemLink,
+									_List_Nil,
+									_List_fromArray(
+										[
+											A3(
+											surprisetalk$elm_bulma$Bulma$Elements$icon,
+											surprisetalk$elm_bulma$Bulma$Modifiers$Small,
+											_List_Nil,
+											_List_fromArray(
+												[
+													A2(
+													elm$html$Html$i,
+													_List_fromArray(
+														[
+															elm$html$Html$Attributes$class('fa fa-heart')
+														]),
+													_List_Nil)
+												]))
+										]))
+								]))
+						]))
+				]))
+		]));
+var elm$core$List$foldrHelper = F4(
+	function (fn, acc, ctr, ls) {
+		if (!ls.b) {
+			return acc;
+		} else {
+			var a = ls.a;
+			var r1 = ls.b;
+			if (!r1.b) {
+				return A2(fn, a, acc);
+			} else {
+				var b = r1.a;
+				var r2 = r1.b;
+				if (!r2.b) {
+					return A2(
+						fn,
+						a,
+						A2(fn, b, acc));
+				} else {
+					var c = r2.a;
+					var r3 = r2.b;
+					if (!r3.b) {
+						return A2(
+							fn,
+							a,
+							A2(
+								fn,
+								b,
+								A2(fn, c, acc)));
+					} else {
+						var d = r3.a;
+						var r4 = r3.b;
+						var res = (ctr > 500) ? A3(
+							elm$core$List$foldl,
+							fn,
+							acc,
+							elm$core$List$reverse(r4)) : A4(elm$core$List$foldrHelper, fn, acc, ctr + 1, r4);
+						return A2(
+							fn,
+							a,
+							A2(
+								fn,
+								b,
+								A2(
+									fn,
+									c,
+									A2(fn, d, res))));
+					}
+				}
+			}
+		}
+	});
+var elm$core$List$foldr = F3(
+	function (fn, acc, ls) {
+		return A4(elm$core$List$foldrHelper, fn, acc, 0, ls);
+	});
+var elm$core$List$map = F2(
+	function (f, xs) {
+		return A3(
+			elm$core$List$foldr,
+			F2(
+				function (x, acc) {
+					return A2(
+						elm$core$List$cons,
+						f(x),
+						acc);
+				}),
+			_List_Nil,
+			xs);
+	});
+var elm$html$Html$a = _VirtualDom_node('a');
+var elm$html$Html$option = _VirtualDom_node('option');
+var elm$html$Html$span = _VirtualDom_node('span');
+var elm$virtual_dom$VirtualDom$attribute = F2(
+	function (key, value) {
+		return A2(
+			_VirtualDom_attribute,
+			_VirtualDom_noOnOrFormAction(key),
+			_VirtualDom_noJavaScriptOrHtmlUri(value));
+	});
+var elm$html$Html$Attributes$attribute = elm$virtual_dom$VirtualDom$attribute;
+var elm$html$Html$Attributes$placeholder = elm$html$Html$Attributes$stringProperty('placeholder');
+var elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
+var elm$html$Html$Attributes$style = elm$virtual_dom$VirtualDom$style;
+var surprisetalk$elm_bulma$Bulma$Components$Boxed = {$: 'Boxed'};
+var surprisetalk$elm_bulma$Bulma$Classes$card = elm$html$Html$Attributes$class('card');
+var surprisetalk$elm_bulma$Bulma$Components$card = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'div',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$card]));
+var surprisetalk$elm_bulma$Bulma$Classes$cardContent = elm$html$Html$Attributes$class('card-content');
+var surprisetalk$elm_bulma$Bulma$Components$cardContent = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'div',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$cardContent]));
+var surprisetalk$elm_bulma$Bulma$Classes$cardFooter = elm$html$Html$Attributes$class('card-footer');
+var surprisetalk$elm_bulma$Bulma$Components$cardFooter = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'footer',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$cardFooter]));
+var surprisetalk$elm_bulma$Bulma$Classes$cardFooterItem = elm$html$Html$Attributes$class('card-footer-item');
+var surprisetalk$elm_bulma$Bulma$Components$cardFooterItem = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'p',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$cardFooterItem]));
+var surprisetalk$elm_bulma$Bulma$Classes$cardImage = elm$html$Html$Attributes$class('card-image');
+var surprisetalk$elm_bulma$Bulma$Components$cardImage = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'div',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$cardImage]));
+var surprisetalk$elm_bulma$Bulma$Classes$dropdown = elm$html$Html$Attributes$class('dropdown');
+var surprisetalk$elm_bulma$Bulma$Classes$isActive = elm$html$Html$Attributes$class('is-active');
+var surprisetalk$elm_bulma$Bulma$Classes$isRight = elm$html$Html$Attributes$class('is-right');
+var surprisetalk$elm_bulma$Bulma$Classes$isUp = elm$html$Html$Attributes$class('is-up');
+var surprisetalk$elm_bulma$Bulma$Components$dropdown = F2(
+	function (isActive, _n0) {
+		var horizontalAlignment = _n0.horizontalAlignment;
+		var verticalDirection = _n0.verticalDirection;
+		return A2(
+			surprisetalk$elm_bulma$Helpers$node,
+			'div',
+			_List_fromArray(
+				[
+					surprisetalk$elm_bulma$Bulma$Classes$dropdown,
+					function () {
+					if (isActive) {
+						return surprisetalk$elm_bulma$Bulma$Classes$isActive;
+					} else {
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					}
+				}(),
+					function () {
+					if (horizontalAlignment.$ === 'Right') {
+						return surprisetalk$elm_bulma$Bulma$Classes$isRight;
+					} else {
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					}
+				}(),
+					function () {
+					if (verticalDirection.$ === 'Up') {
+						return surprisetalk$elm_bulma$Bulma$Classes$isUp;
+					} else {
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					}
+				}()
+				]));
+	});
+var surprisetalk$elm_bulma$Bulma$Classes$dropdownDivider = elm$html$Html$Attributes$class('dropdown-divider');
+var surprisetalk$elm_bulma$Bulma$Components$dropdownDivider = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'hr',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$dropdownDivider]));
+var surprisetalk$elm_bulma$Bulma$Classes$dropdownItem = elm$html$Html$Attributes$class('dropdown-item');
+var surprisetalk$elm_bulma$Bulma$Components$dropdownItem = function (isActive) {
+	return A2(
+		surprisetalk$elm_bulma$Helpers$node,
+		'div',
+		_List_fromArray(
+			[
+				surprisetalk$elm_bulma$Bulma$Classes$dropdownItem,
+				isActive ? surprisetalk$elm_bulma$Bulma$Classes$isActive : surprisetalk$elm_bulma$Bulma$Classes$none
+			]));
+};
+var surprisetalk$elm_bulma$Bulma$Components$dropdownItemLink = function (isActive) {
+	return A2(
+		surprisetalk$elm_bulma$Helpers$node,
+		'a',
+		_List_fromArray(
+			[
+				surprisetalk$elm_bulma$Bulma$Classes$dropdownItem,
+				isActive ? surprisetalk$elm_bulma$Bulma$Classes$isActive : surprisetalk$elm_bulma$Bulma$Classes$none
+			]));
+};
+var elm$html$Html$div = _VirtualDom_node('div');
+var surprisetalk$elm_bulma$Bulma$Components$dropdownMenu = F3(
+	function (attrs, attrs_, items) {
+		return A2(
+			elm$html$Html$div,
+			_Utils_ap(
+				attrs,
+				_List_fromArray(
+					[
+						elm$html$Html$Attributes$class('dropdown-menu'),
+						A2(elm$html$Html$Attributes$attribute, 'role', 'menu')
+					])),
+			_List_fromArray(
+				[
+					A2(
+					elm$html$Html$div,
+					A2(
+						elm$core$List$cons,
+						elm$html$Html$Attributes$class('dropdown-content'),
+						attrs_),
+					items)
+				]));
+	});
+var surprisetalk$elm_bulma$Bulma$Modifiers$Down = {$: 'Down'};
+var surprisetalk$elm_bulma$Bulma$Modifiers$Left = {$: 'Left'};
+var surprisetalk$elm_bulma$Bulma$Components$dropdownModifiers = {horizontalAlignment: surprisetalk$elm_bulma$Bulma$Modifiers$Left, verticalDirection: surprisetalk$elm_bulma$Bulma$Modifiers$Down};
+var surprisetalk$elm_bulma$Bulma$Classes$dropdownTrigger = elm$html$Html$Attributes$class('dropdown-trigger');
+var surprisetalk$elm_bulma$Bulma$Components$dropdownTrigger = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'div',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$dropdownTrigger]));
+var surprisetalk$elm_bulma$Bulma$Classes$menu = elm$html$Html$Attributes$class('menu');
+var surprisetalk$elm_bulma$Bulma$Components$menu = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'aside',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$menu]));
+var surprisetalk$elm_bulma$Bulma$Classes$menuLabel = elm$html$Html$Attributes$class('menu-label');
+var surprisetalk$elm_bulma$Bulma$Components$menuLabel = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'p',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$menuLabel]));
+var surprisetalk$elm_bulma$Bulma$Classes$menuList = elm$html$Html$Attributes$class('menu-list');
+var surprisetalk$elm_bulma$Bulma$Components$menuList = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'ul',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$menuList]));
+var elm$html$Html$li = _VirtualDom_node('li');
+var surprisetalk$elm_bulma$Bulma$Components$menuListItem = elm$html$Html$li;
+var elm$core$Basics$composeL = F3(
+	function (g, f, x) {
+		return g(
+			f(x));
+	});
+var surprisetalk$elm_bulma$Bulma$Components$menuListItemLink = function (active) {
+	return A2(
+		elm$core$Basics$composeL,
+		elm$html$Html$a,
+		elm$core$List$cons(
+			elm$html$Html$Attributes$class(
+				active ? 'is-active' : '')));
+};
+var surprisetalk$elm_bulma$Bulma$Classes$isBlack = elm$html$Html$Attributes$class('is-black');
+var surprisetalk$elm_bulma$Bulma$Classes$isDanger = elm$html$Html$Attributes$class('is-danger');
+var surprisetalk$elm_bulma$Bulma$Classes$isDark = elm$html$Html$Attributes$class('is-dark');
+var surprisetalk$elm_bulma$Bulma$Classes$isInfo = elm$html$Html$Attributes$class('is-info');
+var surprisetalk$elm_bulma$Bulma$Classes$isLight = elm$html$Html$Attributes$class('is-light');
+var surprisetalk$elm_bulma$Bulma$Classes$isLink = elm$html$Html$Attributes$class('is-link');
+var surprisetalk$elm_bulma$Bulma$Classes$isPrimary = elm$html$Html$Attributes$class('is-primary');
+var surprisetalk$elm_bulma$Bulma$Classes$isSuccess = elm$html$Html$Attributes$class('is-success');
+var surprisetalk$elm_bulma$Bulma$Classes$isWarning = elm$html$Html$Attributes$class('is-warning');
+var surprisetalk$elm_bulma$Bulma$Classes$isWhite = elm$html$Html$Attributes$class('is-white');
+var surprisetalk$elm_bulma$Bulma$Classes$message = elm$html$Html$Attributes$class('message');
+var surprisetalk$elm_bulma$Bulma$Components$message = function (_n0) {
+	var color = _n0.color;
+	var size = _n0.size;
+	return A2(
+		surprisetalk$elm_bulma$Helpers$node,
+		'article',
+		_List_fromArray(
+			[
+				surprisetalk$elm_bulma$Bulma$Classes$message,
+				function () {
+				switch (color.$) {
+					case 'Default':
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					case 'White':
+						return surprisetalk$elm_bulma$Bulma$Classes$isWhite;
+					case 'Light':
+						return surprisetalk$elm_bulma$Bulma$Classes$isLight;
+					case 'Dark':
+						return surprisetalk$elm_bulma$Bulma$Classes$isDark;
+					case 'Black':
+						return surprisetalk$elm_bulma$Bulma$Classes$isBlack;
+					case 'Primary':
+						return surprisetalk$elm_bulma$Bulma$Classes$isPrimary;
+					case 'Link':
+						return surprisetalk$elm_bulma$Bulma$Classes$isLink;
+					case 'Info':
+						return surprisetalk$elm_bulma$Bulma$Classes$isInfo;
+					case 'Success':
+						return surprisetalk$elm_bulma$Bulma$Classes$isSuccess;
+					case 'Warning':
+						return surprisetalk$elm_bulma$Bulma$Classes$isWarning;
+					default:
+						return surprisetalk$elm_bulma$Bulma$Classes$isDanger;
+				}
+			}(),
+				function () {
+				switch (size.$) {
+					case 'Small':
+						return surprisetalk$elm_bulma$Bulma$Classes$isSmall;
+					case 'Standard':
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					case 'Medium':
+						return surprisetalk$elm_bulma$Bulma$Classes$isMedium;
+					default:
+						return surprisetalk$elm_bulma$Bulma$Classes$isLarge;
+				}
+			}()
+			]));
+};
+var surprisetalk$elm_bulma$Bulma$Classes$messageBody = elm$html$Html$Attributes$class('message-body');
+var surprisetalk$elm_bulma$Bulma$Components$messageBody = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'div',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$messageBody]));
+var surprisetalk$elm_bulma$Bulma$Classes$messageHeader = elm$html$Html$Attributes$class('message-header');
+var elm$virtual_dom$VirtualDom$Normal = function (a) {
+	return {$: 'Normal', a: a};
+};
+var elm$virtual_dom$VirtualDom$on = _VirtualDom_on;
+var elm$html$Html$Events$on = F2(
+	function (event, decoder) {
+		return A2(
+			elm$virtual_dom$VirtualDom$on,
+			event,
+			elm$virtual_dom$VirtualDom$Normal(decoder));
+	});
+var elm$html$Html$Events$onClick = function (msg) {
+	return A2(
+		elm$html$Html$Events$on,
+		'click',
+		elm$json$Json$Decode$succeed(msg));
+};
+var surprisetalk$elm_bulma$Bulma$Classes$delete = elm$html$Html$Attributes$class('delete');
+var surprisetalk$elm_bulma$Bulma$Elements$delete = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'a',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$delete]));
+var surprisetalk$elm_bulma$Bulma$Elements$easyDelete = F2(
+	function (attrs, msg) {
+		return A2(
+			surprisetalk$elm_bulma$Bulma$Elements$delete,
+			A2(
+				elm$core$List$cons,
+				elm$html$Html$Events$onClick(msg),
+				attrs),
+			_List_Nil);
+	});
+var surprisetalk$elm_bulma$Helpers$flip = F3(
+	function (f, a, b) {
+		return A2(f, b, a);
+	});
+var surprisetalk$elm_bulma$Bulma$Components$messageHeaderWithDelete = F2(
+	function (attrs, msg) {
+		return A2(
+			elm$core$Basics$composeL,
+			A3(
+				surprisetalk$elm_bulma$Helpers$node,
+				'div',
+				_List_fromArray(
+					[surprisetalk$elm_bulma$Bulma$Classes$messageHeader]),
+				attrs),
+			A2(
+				surprisetalk$elm_bulma$Helpers$flip,
+				elm$core$Basics$append,
+				_List_fromArray(
+					[
+						A2(surprisetalk$elm_bulma$Bulma$Elements$easyDelete, _List_Nil, msg)
+					])));
+	});
+var surprisetalk$elm_bulma$Bulma$Modifiers$Default = {$: 'Default'};
+var surprisetalk$elm_bulma$Bulma$Components$messageModifiers = {color: surprisetalk$elm_bulma$Bulma$Modifiers$Default, size: surprisetalk$elm_bulma$Bulma$Modifiers$Standard};
+var surprisetalk$elm_bulma$Bulma$Classes$pagination = elm$html$Html$Attributes$class('pagination');
+var surprisetalk$elm_bulma$Bulma$Components$pagination = function (alignment) {
+	return A2(
+		surprisetalk$elm_bulma$Helpers$node,
+		'div',
+		_List_fromArray(
+			[
+				surprisetalk$elm_bulma$Bulma$Classes$pagination,
+				function () {
+				switch (alignment.$) {
+					case 'Left':
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					case 'Centered':
+						return surprisetalk$elm_bulma$Bulma$Classes$isCentered;
+					default:
+						return surprisetalk$elm_bulma$Bulma$Classes$isRight;
+				}
+			}()
+			]));
+};
+var surprisetalk$elm_bulma$Bulma$Classes$paginationEllipsis = elm$html$Html$Attributes$class('pagination-ellipsis');
+var surprisetalk$elm_bulma$Bulma$Components$paginationEllipsis = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'span',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$paginationEllipsis]));
+var surprisetalk$elm_bulma$Bulma$Classes$isCurrent = elm$html$Html$Attributes$class('is-current');
+var surprisetalk$elm_bulma$Bulma$Classes$paginationLink = elm$html$Html$Attributes$class('pagination-link');
+var surprisetalk$elm_bulma$Bulma$Components$paginationLink = function (current) {
+	return A2(
+		surprisetalk$elm_bulma$Helpers$node,
+		'a',
+		_List_fromArray(
+			[
+				surprisetalk$elm_bulma$Bulma$Classes$paginationLink,
+				function () {
+				if (current) {
+					return surprisetalk$elm_bulma$Bulma$Classes$isCurrent;
+				} else {
+					return surprisetalk$elm_bulma$Bulma$Classes$none;
+				}
+			}()
+			]));
+};
+var elm$core$Basics$composeR = F3(
+	function (f, g, x) {
+		return g(
+			f(x));
+	});
+var surprisetalk$elm_bulma$Bulma$Classes$paginationList = elm$html$Html$Attributes$class('pagination-list');
+var surprisetalk$elm_bulma$Helpers$ls = function (x) {
+	return _List_fromArray(
+		[x]);
+};
+var surprisetalk$elm_bulma$Bulma$Components$paginationList = function (attrs) {
+	return A2(
+		elm$core$Basics$composeR,
+		elm$core$List$map(
+			A2(
+				elm$core$Basics$composeR,
+				surprisetalk$elm_bulma$Helpers$ls,
+				elm$html$Html$li(_List_Nil))),
+		A3(
+			surprisetalk$elm_bulma$Helpers$node,
+			'ul',
+			_List_fromArray(
+				[surprisetalk$elm_bulma$Bulma$Classes$paginationList]),
+			attrs));
+};
+var surprisetalk$elm_bulma$Bulma$Classes$paginationNext = elm$html$Html$Attributes$class('pagination-next');
+var surprisetalk$elm_bulma$Bulma$Components$paginationNext = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'a',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$paginationNext]));
+var surprisetalk$elm_bulma$Bulma$Classes$paginationPrevious = elm$html$Html$Attributes$class('pagination-previous');
+var surprisetalk$elm_bulma$Bulma$Components$paginationPrev = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'a',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$paginationPrevious]));
+var surprisetalk$elm_bulma$Bulma$Classes$panel = elm$html$Html$Attributes$class('panel');
+var surprisetalk$elm_bulma$Bulma$Components$panel = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'div',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$panel]));
+var surprisetalk$elm_bulma$Bulma$Classes$panelBlock = elm$html$Html$Attributes$class('panel-block');
+var surprisetalk$elm_bulma$Bulma$Components$panelBlock = function (active) {
+	return A2(
+		surprisetalk$elm_bulma$Helpers$node,
+		'div',
+		_List_fromArray(
+			[
+				surprisetalk$elm_bulma$Bulma$Classes$panelBlock,
+				function () {
+				if (active) {
+					return surprisetalk$elm_bulma$Bulma$Classes$isActive;
+				} else {
+					return surprisetalk$elm_bulma$Bulma$Classes$none;
+				}
+			}()
+			]));
+};
+var elm$html$Html$input = _VirtualDom_node('input');
+var elm$html$Html$Attributes$type_ = elm$html$Html$Attributes$stringProperty('type');
+var surprisetalk$elm_bulma$Bulma$Components$panelCheckbox = F4(
+	function (active, attrs, attrs_, htmls) {
+		return A2(
+			elm$html$Html$a,
+			A2(
+				elm$core$List$cons,
+				function () {
+					if (active) {
+						return elm$html$Html$Attributes$class('panel-block is-active');
+					} else {
+						return elm$html$Html$Attributes$class('panel-block ');
+					}
+				}(),
+				attrs),
+			A2(
+				elm$core$List$cons,
+				A2(
+					elm$html$Html$input,
+					A2(
+						elm$core$List$cons,
+						elm$html$Html$Attributes$type_('checkbox'),
+						attrs_),
+					_List_Nil),
+				htmls));
+	});
+var surprisetalk$elm_bulma$Bulma$Classes$panelHeading = elm$html$Html$Attributes$class('panel-heading');
+var surprisetalk$elm_bulma$Bulma$Components$panelHeading = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'p',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$panelHeading]));
+var surprisetalk$elm_bulma$Bulma$Components$panelLinkWithIcon = F5(
+	function (active, attrs, attrs_, iconBodies, htmls) {
+		return A2(
+			elm$html$Html$a,
+			A2(
+				elm$core$List$cons,
+				function () {
+					if (active) {
+						return elm$html$Html$Attributes$class('panel-block is-active');
+					} else {
+						return elm$html$Html$Attributes$class('panel-block ');
+					}
+				}(),
+				attrs),
+			A2(
+				elm$core$List$cons,
+				A2(
+					elm$html$Html$span,
+					A2(
+						elm$core$List$cons,
+						elm$html$Html$Attributes$class('panel-icon'),
+						attrs_),
+					iconBodies),
+				htmls));
+	});
+var surprisetalk$elm_bulma$Bulma$Components$panelTab = function (active) {
+	return A2(
+		surprisetalk$elm_bulma$Helpers$node,
+		'a',
+		_List_fromArray(
+			[
+				function () {
+				if (active) {
+					return surprisetalk$elm_bulma$Bulma$Classes$isActive;
+				} else {
+					return surprisetalk$elm_bulma$Bulma$Classes$none;
+				}
+			}()
+			]));
+};
+var surprisetalk$elm_bulma$Bulma$Classes$panelTabs = elm$html$Html$Attributes$class('panel-tabs');
+var surprisetalk$elm_bulma$Bulma$Components$panelTabs = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'p',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$panelTabs]));
+var surprisetalk$elm_bulma$Bulma$Components$tab = F4(
+	function (active, attrs, attrs_, htmls) {
+		return A2(
+			elm$html$Html$li,
+			A2(
+				elm$core$List$cons,
+				function () {
+					if (active) {
+						return surprisetalk$elm_bulma$Bulma$Classes$isActive;
+					} else {
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					}
+				}(),
+				attrs),
+			_List_fromArray(
+				[
+					A2(elm$html$Html$a, attrs_, htmls)
+				]));
+	});
+var elm$html$Html$ul = _VirtualDom_node('ul');
+var surprisetalk$elm_bulma$Bulma$Classes$isBoxed = elm$html$Html$Attributes$class('is-boxed');
+var surprisetalk$elm_bulma$Bulma$Classes$isToggle = elm$html$Html$Attributes$class('is-toggle');
+var surprisetalk$elm_bulma$Bulma$Classes$isToggleRounded = elm$html$Html$Attributes$class('is-toggle-rounded');
+var surprisetalk$elm_bulma$Bulma$Classes$tabs = elm$html$Html$Attributes$class('tabs');
+var surprisetalk$elm_bulma$Bulma$Components$tabs = F3(
+	function (_n0, attrs, attrs_) {
+		var style = _n0.style;
+		var alignment = _n0.alignment;
+		var size = _n0.size;
+		return A2(
+			elm$core$Basics$composeL,
+			A2(
+				elm$core$Basics$composeL,
+				A3(
+					surprisetalk$elm_bulma$Helpers$node,
+					'div',
+					_List_fromArray(
+						[
+							surprisetalk$elm_bulma$Bulma$Classes$tabs,
+							function () {
+							switch (style.$) {
+								case 'Toggle':
+									return surprisetalk$elm_bulma$Bulma$Classes$isToggle;
+								case 'Round':
+									return surprisetalk$elm_bulma$Bulma$Classes$isToggle;
+								default:
+									return surprisetalk$elm_bulma$Bulma$Classes$none;
+							}
+						}(),
+							function () {
+							if (style.$ === 'Boxed') {
+								return surprisetalk$elm_bulma$Bulma$Classes$isBoxed;
+							} else {
+								return surprisetalk$elm_bulma$Bulma$Classes$none;
+							}
+						}(),
+							function () {
+							if (style.$ === 'Round') {
+								return surprisetalk$elm_bulma$Bulma$Classes$isToggleRounded;
+							} else {
+								return surprisetalk$elm_bulma$Bulma$Classes$none;
+							}
+						}(),
+							function () {
+							switch (alignment.$) {
+								case 'Left':
+									return surprisetalk$elm_bulma$Bulma$Classes$none;
+								case 'Centered':
+									return surprisetalk$elm_bulma$Bulma$Classes$isCentered;
+								default:
+									return surprisetalk$elm_bulma$Bulma$Classes$isRight;
+							}
+						}(),
+							function () {
+							switch (size.$) {
+								case 'Small':
+									return surprisetalk$elm_bulma$Bulma$Classes$isSmall;
+								case 'Standard':
+									return surprisetalk$elm_bulma$Bulma$Classes$none;
+								case 'Medium':
+									return surprisetalk$elm_bulma$Bulma$Classes$isMedium;
+								default:
+									return surprisetalk$elm_bulma$Bulma$Classes$isLarge;
+							}
+						}()
+						]),
+					attrs),
+				surprisetalk$elm_bulma$Helpers$ls),
+			elm$html$Html$ul(attrs_));
+	});
+var surprisetalk$elm_bulma$Bulma$Components$Minimal = {$: 'Minimal'};
+var surprisetalk$elm_bulma$Bulma$Components$tabsModifiers = {alignment: surprisetalk$elm_bulma$Bulma$Modifiers$Left, size: surprisetalk$elm_bulma$Bulma$Modifiers$Standard, style: surprisetalk$elm_bulma$Bulma$Components$Minimal};
+var surprisetalk$elm_bulma$Bulma$Elements$FourByThree = {$: 'FourByThree'};
+var surprisetalk$elm_bulma$Bulma$Elements$H3 = {$: 'H3'};
+var surprisetalk$elm_bulma$Bulma$Elements$X48 = {$: 'X48'};
+var surprisetalk$elm_bulma$Bulma$Classes$box = elm$html$Html$Attributes$class('box');
+var surprisetalk$elm_bulma$Bulma$Elements$box = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'div',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$box]));
+var elm$json$Json$Encode$bool = _Json_wrap;
+var elm$html$Html$Attributes$boolProperty = F2(
+	function (key, bool) {
+		return A2(
+			_VirtualDom_property,
+			key,
+			elm$json$Json$Encode$bool(bool));
+	});
+var elm$html$Html$Attributes$disabled = elm$html$Html$Attributes$boolProperty('disabled');
+var surprisetalk$elm_bulma$Bulma$Classes$button = elm$html$Html$Attributes$class('button');
+var surprisetalk$elm_bulma$Bulma$Classes$isFocused = elm$html$Html$Attributes$class('is-focused');
+var surprisetalk$elm_bulma$Bulma$Classes$isHovered = elm$html$Html$Attributes$class('is-hovered');
+var surprisetalk$elm_bulma$Bulma$Classes$isInverted = elm$html$Html$Attributes$class('is-inverted');
+var surprisetalk$elm_bulma$Bulma$Classes$isLoading = elm$html$Html$Attributes$class('is-loading');
+var surprisetalk$elm_bulma$Bulma$Classes$isOutlined = elm$html$Html$Attributes$class('is-outlined');
+var surprisetalk$elm_bulma$Bulma$Classes$isRounded = elm$html$Html$Attributes$class('is-rounded');
+var surprisetalk$elm_bulma$Bulma$Classes$isSelected = elm$html$Html$Attributes$class('is-selected');
+var surprisetalk$elm_bulma$Bulma$Classes$isStatic = elm$html$Html$Attributes$class('is-static');
+var surprisetalk$elm_bulma$Bulma$Elements$button = F3(
+	function (_n0, attrs, htmls) {
+		var disabled = _n0.disabled;
+		var outlined = _n0.outlined;
+		var inverted = _n0.inverted;
+		var rounded = _n0.rounded;
+		var size = _n0.size;
+		var state = _n0.state;
+		var color = _n0.color;
+		var _static = _n0._static;
+		var iconLeft = _n0.iconLeft;
+		var iconRight = _n0.iconRight;
+		var iconRight_ = function () {
+			if (iconRight.$ === 'Just') {
+				var _n13 = iconRight.a;
+				var size_ = _n13.a;
+				var attrs_ = _n13.b;
+				var body = _n13.c;
+				return _List_fromArray(
+					[
+						A3(
+						surprisetalk$elm_bulma$Bulma$Elements$icon,
+						size_,
+						attrs_,
+						_List_fromArray(
+							[body]))
+					]);
+			} else {
+				return _List_Nil;
+			}
+		}();
+		var iconLeft_ = function () {
+			if (iconLeft.$ === 'Just') {
+				var _n11 = iconLeft.a;
+				var size_ = _n11.a;
+				var attrs_ = _n11.b;
+				var body = _n11.c;
+				return _List_fromArray(
+					[
+						A3(
+						surprisetalk$elm_bulma$Bulma$Elements$icon,
+						size_,
+						attrs_,
+						_List_fromArray(
+							[body]))
+					]);
+			} else {
+				return _List_Nil;
+			}
+		}();
+		var htmls_ = function () {
+			if (!htmls.b) {
+				return _Utils_ap(iconLeft_, iconRight_);
+			} else {
+				var htmls__ = htmls;
+				return _Utils_ap(
+					iconLeft_,
+					_Utils_ap(
+						_List_fromArray(
+							[
+								A2(elm$html$Html$span, _List_Nil, htmls__)
+							]),
+						iconRight_));
+			}
+		}();
+		return A4(
+			surprisetalk$elm_bulma$Helpers$node,
+			'button',
+			_List_fromArray(
+				[
+					elm$html$Html$Attributes$disabled(disabled),
+					surprisetalk$elm_bulma$Bulma$Classes$button,
+					function () {
+					if (_static) {
+						return surprisetalk$elm_bulma$Bulma$Classes$isStatic;
+					} else {
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					}
+				}(),
+					function () {
+					if (outlined) {
+						return surprisetalk$elm_bulma$Bulma$Classes$isOutlined;
+					} else {
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					}
+				}(),
+					function () {
+					if (inverted) {
+						return surprisetalk$elm_bulma$Bulma$Classes$isInverted;
+					} else {
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					}
+				}(),
+					function () {
+					if (rounded) {
+						return surprisetalk$elm_bulma$Bulma$Classes$isRounded;
+					} else {
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					}
+				}(),
+					function () {
+					if (color.$ === 'Default') {
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					} else {
+						return surprisetalk$elm_bulma$Bulma$Classes$isSelected;
+					}
+				}(),
+					function () {
+					switch (color.$) {
+						case 'Default':
+							return surprisetalk$elm_bulma$Bulma$Classes$none;
+						case 'White':
+							return surprisetalk$elm_bulma$Bulma$Classes$isWhite;
+						case 'Light':
+							return surprisetalk$elm_bulma$Bulma$Classes$isLight;
+						case 'Dark':
+							return surprisetalk$elm_bulma$Bulma$Classes$isDark;
+						case 'Black':
+							return surprisetalk$elm_bulma$Bulma$Classes$isBlack;
+						case 'Primary':
+							return surprisetalk$elm_bulma$Bulma$Classes$isPrimary;
+						case 'Link':
+							return surprisetalk$elm_bulma$Bulma$Classes$isLink;
+						case 'Info':
+							return surprisetalk$elm_bulma$Bulma$Classes$isInfo;
+						case 'Success':
+							return surprisetalk$elm_bulma$Bulma$Classes$isSuccess;
+						case 'Warning':
+							return surprisetalk$elm_bulma$Bulma$Classes$isWarning;
+						default:
+							return surprisetalk$elm_bulma$Bulma$Classes$isDanger;
+					}
+				}(),
+					function () {
+					switch (size.$) {
+						case 'Small':
+							return surprisetalk$elm_bulma$Bulma$Classes$isSmall;
+						case 'Standard':
+							return surprisetalk$elm_bulma$Bulma$Classes$none;
+						case 'Medium':
+							return surprisetalk$elm_bulma$Bulma$Classes$isMedium;
+						default:
+							return surprisetalk$elm_bulma$Bulma$Classes$isLarge;
+					}
+				}(),
+					function () {
+					switch (state.$) {
+						case 'Blur':
+							return surprisetalk$elm_bulma$Bulma$Classes$none;
+						case 'Hover':
+							return surprisetalk$elm_bulma$Bulma$Classes$isHovered;
+						case 'Focus':
+							return surprisetalk$elm_bulma$Bulma$Classes$isFocused;
+						case 'Active':
+							return surprisetalk$elm_bulma$Bulma$Classes$isActive;
+						default:
+							return surprisetalk$elm_bulma$Bulma$Classes$isLoading;
+					}
+				}()
+				]),
+			attrs,
+			htmls_);
+	});
+var surprisetalk$elm_bulma$Bulma$Modifiers$Blur = {$: 'Blur'};
+var surprisetalk$elm_bulma$Bulma$Elements$buttonModifiers = {color: surprisetalk$elm_bulma$Bulma$Modifiers$Default, disabled: false, iconLeft: elm$core$Maybe$Nothing, iconRight: elm$core$Maybe$Nothing, inverted: false, outlined: false, rounded: false, size: surprisetalk$elm_bulma$Bulma$Modifiers$Standard, state: surprisetalk$elm_bulma$Bulma$Modifiers$Blur, _static: false};
+var surprisetalk$elm_bulma$Bulma$Classes$buttons = elm$html$Html$Attributes$class('buttons');
+var surprisetalk$elm_bulma$Bulma$Elements$buttons = function (alignment) {
+	return A2(
+		surprisetalk$elm_bulma$Helpers$node,
+		'div',
+		_List_fromArray(
+			[
+				surprisetalk$elm_bulma$Bulma$Classes$buttons,
+				function () {
+				switch (alignment.$) {
+					case 'Left':
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					case 'Centered':
+						return surprisetalk$elm_bulma$Bulma$Classes$isCentered;
+					default:
+						return surprisetalk$elm_bulma$Bulma$Classes$isRight;
+				}
+			}()
+			]));
+};
+var elm$core$Basics$round = _Basics_round;
+var elm$html$Html$Attributes$max = elm$html$Html$Attributes$stringProperty('max');
+var elm$html$Html$Attributes$value = elm$html$Html$Attributes$stringProperty('value');
+var surprisetalk$elm_bulma$Bulma$Classes$progress = elm$html$Html$Attributes$class('progress');
+var surprisetalk$elm_bulma$Bulma$Elements$progress = function (_n0) {
+	var size = _n0.size;
+	var color = _n0.color;
+	return A2(
+		surprisetalk$elm_bulma$Helpers$node,
+		'progress',
+		_List_fromArray(
+			[
+				surprisetalk$elm_bulma$Bulma$Classes$progress,
+				function () {
+				switch (size.$) {
+					case 'Small':
+						return surprisetalk$elm_bulma$Bulma$Classes$isSmall;
+					case 'Standard':
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					case 'Medium':
+						return surprisetalk$elm_bulma$Bulma$Classes$isMedium;
+					default:
+						return surprisetalk$elm_bulma$Bulma$Classes$isLarge;
+				}
+			}(),
+				function () {
+				switch (color.$) {
+					case 'Default':
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					case 'White':
+						return surprisetalk$elm_bulma$Bulma$Classes$isWhite;
+					case 'Light':
+						return surprisetalk$elm_bulma$Bulma$Classes$isLight;
+					case 'Dark':
+						return surprisetalk$elm_bulma$Bulma$Classes$isDark;
+					case 'Black':
+						return surprisetalk$elm_bulma$Bulma$Classes$isBlack;
+					case 'Primary':
+						return surprisetalk$elm_bulma$Bulma$Classes$isPrimary;
+					case 'Info':
+						return surprisetalk$elm_bulma$Bulma$Classes$isInfo;
+					case 'Success':
+						return surprisetalk$elm_bulma$Bulma$Classes$isSuccess;
+					case 'Warning':
+						return surprisetalk$elm_bulma$Bulma$Classes$isWarning;
+					case 'Danger':
+						return surprisetalk$elm_bulma$Bulma$Classes$isDanger;
+					default:
+						return surprisetalk$elm_bulma$Bulma$Classes$isLink;
+				}
+			}()
+			]));
+};
+var surprisetalk$elm_bulma$Bulma$Elements$easyProgress = F3(
+	function (mods, attrs, val) {
+		return A3(
+			surprisetalk$elm_bulma$Bulma$Elements$progress,
+			mods,
+			A2(
+				elm$core$List$cons,
+				elm$html$Html$Attributes$value(
+					elm$core$String$fromInt(
+						elm$core$Basics$round(val * 100))),
+				A2(
+					elm$core$List$cons,
+					elm$html$Html$Attributes$max('100'),
+					attrs)),
+			_List_Nil);
+	});
+var surprisetalk$elm_bulma$Bulma$Classes$isNormal = elm$html$Html$Attributes$class('is-normal');
+var surprisetalk$elm_bulma$Bulma$Elements$easyTitleWithSubtitle = F4(
+	function (spacing, size, title_, subt) {
+		return _List_fromArray(
+			[
+				A4(
+				surprisetalk$elm_bulma$Helpers$node,
+				'p',
+				_List_fromArray(
+					[
+						surprisetalk$elm_bulma$Bulma$Classes$title,
+						function () {
+						if (spacing) {
+							return surprisetalk$elm_bulma$Bulma$Classes$isNormal;
+						} else {
+							return surprisetalk$elm_bulma$Bulma$Classes$none;
+						}
+					}(),
+						function () {
+						switch (size.$) {
+							case 'H1':
+								return surprisetalk$elm_bulma$Bulma$Classes$is1;
+							case 'H2':
+								return surprisetalk$elm_bulma$Bulma$Classes$is2;
+							case 'H3':
+								return surprisetalk$elm_bulma$Bulma$Classes$is3;
+							case 'H4':
+								return surprisetalk$elm_bulma$Bulma$Classes$is4;
+							case 'H5':
+								return surprisetalk$elm_bulma$Bulma$Classes$is5;
+							default:
+								return surprisetalk$elm_bulma$Bulma$Classes$is6;
+						}
+					}()
+					]),
+				_List_Nil,
+				title_),
+				A4(
+				surprisetalk$elm_bulma$Helpers$node,
+				'p',
+				_List_fromArray(
+					[
+						surprisetalk$elm_bulma$Bulma$Classes$subtitle,
+						function () {
+						switch (size.$) {
+							case 'H1':
+								return surprisetalk$elm_bulma$Bulma$Classes$is3;
+							case 'H2':
+								return surprisetalk$elm_bulma$Bulma$Classes$is4;
+							case 'H3':
+								return surprisetalk$elm_bulma$Bulma$Classes$is5;
+							default:
+								return surprisetalk$elm_bulma$Bulma$Classes$is6;
+						}
+					}()
+					]),
+				_List_Nil,
+				subt)
+			]);
+	});
+var surprisetalk$elm_bulma$Bulma$Classes$notification = elm$html$Html$Attributes$class('notification');
+var surprisetalk$elm_bulma$Bulma$Elements$notification = function (color) {
+	return A2(
+		surprisetalk$elm_bulma$Helpers$node,
+		'div',
+		_List_fromArray(
+			[
+				surprisetalk$elm_bulma$Bulma$Classes$notification,
+				function () {
+				switch (color.$) {
+					case 'Default':
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					case 'White':
+						return surprisetalk$elm_bulma$Bulma$Classes$isWhite;
+					case 'Light':
+						return surprisetalk$elm_bulma$Bulma$Classes$isLight;
+					case 'Dark':
+						return surprisetalk$elm_bulma$Bulma$Classes$isDark;
+					case 'Black':
+						return surprisetalk$elm_bulma$Bulma$Classes$isBlack;
+					case 'Primary':
+						return surprisetalk$elm_bulma$Bulma$Classes$isPrimary;
+					case 'Info':
+						return surprisetalk$elm_bulma$Bulma$Classes$isInfo;
+					case 'Success':
+						return surprisetalk$elm_bulma$Bulma$Classes$isSuccess;
+					case 'Warning':
+						return surprisetalk$elm_bulma$Bulma$Classes$isWarning;
+					case 'Danger':
+						return surprisetalk$elm_bulma$Bulma$Classes$isDanger;
+					default:
+						return surprisetalk$elm_bulma$Bulma$Classes$isLink;
+				}
+			}()
+			]));
+};
+var surprisetalk$elm_bulma$Bulma$Elements$notificationWithDelete = F3(
+	function (color, attrs, msg) {
+		return A2(
+			elm$core$Basics$composeL,
+			A2(surprisetalk$elm_bulma$Bulma$Elements$notification, color, attrs),
+			elm$core$List$cons(
+				A2(surprisetalk$elm_bulma$Bulma$Elements$easyDelete, _List_Nil, msg)));
+	});
+var surprisetalk$elm_bulma$Bulma$Elements$progressModifiers = {color: surprisetalk$elm_bulma$Bulma$Modifiers$Default, size: surprisetalk$elm_bulma$Bulma$Modifiers$Standard};
+var surprisetalk$elm_bulma$Bulma$Classes$tag = elm$html$Html$Attributes$class('tag');
+var surprisetalk$elm_bulma$Bulma$Elements$tag = function (_n0) {
+	var size = _n0.size;
+	var color = _n0.color;
+	var isLink = _n0.isLink;
+	return A2(
+		surprisetalk$elm_bulma$Helpers$node,
+		isLink ? 'a' : 'span',
+		_List_fromArray(
+			[
+				surprisetalk$elm_bulma$Bulma$Classes$tag,
+				function () {
+				switch (size.$) {
+					case 'Small':
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					case 'Standard':
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					case 'Medium':
+						return surprisetalk$elm_bulma$Bulma$Classes$isMedium;
+					default:
+						return surprisetalk$elm_bulma$Bulma$Classes$isLarge;
+				}
+			}(),
+				function () {
+				switch (color.$) {
+					case 'Default':
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					case 'White':
+						return surprisetalk$elm_bulma$Bulma$Classes$isWhite;
+					case 'Light':
+						return surprisetalk$elm_bulma$Bulma$Classes$isLight;
+					case 'Dark':
+						return surprisetalk$elm_bulma$Bulma$Classes$isDark;
+					case 'Black':
+						return surprisetalk$elm_bulma$Bulma$Classes$isBlack;
+					case 'Primary':
+						return surprisetalk$elm_bulma$Bulma$Classes$isPrimary;
+					case 'Info':
+						return surprisetalk$elm_bulma$Bulma$Classes$isInfo;
+					case 'Success':
+						return surprisetalk$elm_bulma$Bulma$Classes$isSuccess;
+					case 'Warning':
+						return surprisetalk$elm_bulma$Bulma$Classes$isWarning;
+					case 'Danger':
+						return surprisetalk$elm_bulma$Bulma$Classes$isDanger;
+					default:
+						return surprisetalk$elm_bulma$Bulma$Classes$isLink;
+				}
+			}()
+			]));
+};
+var surprisetalk$elm_bulma$Bulma$Elements$tagModifiers = {color: surprisetalk$elm_bulma$Bulma$Modifiers$Default, isLink: false, size: surprisetalk$elm_bulma$Bulma$Modifiers$Standard};
+var surprisetalk$elm_bulma$Bulma$Classes$tags = elm$html$Html$Attributes$class('tags');
+var surprisetalk$elm_bulma$Bulma$Elements$tags = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'div',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$tags]));
+var elm$core$Maybe$map = F2(
+	function (f, maybe) {
+		if (maybe.$ === 'Just') {
+			var value = maybe.a;
+			return elm$core$Maybe$Just(
+				f(value));
+		} else {
+			return elm$core$Maybe$Nothing;
+		}
+	});
+var elm$core$Maybe$withDefault = F2(
+	function (_default, maybe) {
+		if (maybe.$ === 'Just') {
+			var value = maybe.a;
+			return value;
+		} else {
+			return _default;
+		}
+	});
+var surprisetalk$elm_bulma$Bulma$Classes$control = elm$html$Html$Attributes$class('control');
+var surprisetalk$elm_bulma$Bulma$Classes$hasIconsLeft = elm$html$Html$Attributes$class('has-icons-left');
+var surprisetalk$elm_bulma$Bulma$Classes$hasIconsRight = elm$html$Html$Attributes$class('has-icons-right');
+var surprisetalk$elm_bulma$Bulma$Classes$isExpanded = elm$html$Html$Attributes$class('is-expanded');
+var surprisetalk$elm_bulma$Bulma$Form$control = F3(
+	function (_n0, attrs, htmls) {
+		var loading = _n0.loading;
+		var expanded = _n0.expanded;
+		var iconLeft = _n0.iconLeft;
+		var iconRight = _n0.iconRight;
+		return A4(
+			surprisetalk$elm_bulma$Helpers$node,
+			'p',
+			_List_fromArray(
+				[
+					surprisetalk$elm_bulma$Bulma$Classes$control,
+					function () {
+					if (loading.$ === 'Just') {
+						return surprisetalk$elm_bulma$Bulma$Classes$isLoading;
+					} else {
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					}
+				}(),
+					function () {
+					_n2$3:
+					while (true) {
+						if (loading.$ === 'Just') {
+							switch (loading.a.$) {
+								case 'Small':
+									var _n3 = loading.a;
+									return surprisetalk$elm_bulma$Bulma$Classes$isSmall;
+								case 'Medium':
+									var _n4 = loading.a;
+									return surprisetalk$elm_bulma$Bulma$Classes$isMedium;
+								case 'Large':
+									var _n5 = loading.a;
+									return surprisetalk$elm_bulma$Bulma$Classes$isLarge;
+								default:
+									break _n2$3;
+							}
+						} else {
+							break _n2$3;
+						}
+					}
+					return surprisetalk$elm_bulma$Bulma$Classes$none;
+				}(),
+					function () {
+					if (expanded) {
+						return surprisetalk$elm_bulma$Bulma$Classes$isExpanded;
+					} else {
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					}
+				}(),
+					function () {
+					if (iconLeft.$ === 'Just') {
+						return surprisetalk$elm_bulma$Bulma$Classes$hasIconsLeft;
+					} else {
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					}
+				}(),
+					function () {
+					if (iconRight.$ === 'Just') {
+						return surprisetalk$elm_bulma$Bulma$Classes$hasIconsRight;
+					} else {
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					}
+				}()
+				]),
+			attrs,
+			_Utils_ap(
+				htmls,
+				_Utils_ap(
+					A2(
+						elm$core$Maybe$withDefault,
+						_List_Nil,
+						A2(
+							elm$core$Maybe$map,
+							function (_n9) {
+								var size_ = _n9.a;
+								var attrs_ = _n9.b;
+								var iconBody = _n9.c;
+								return _List_fromArray(
+									[
+										A3(
+										surprisetalk$elm_bulma$Bulma$Elements$icon,
+										size_,
+										A2(
+											elm$core$List$cons,
+											elm$html$Html$Attributes$class('is-left'),
+											attrs_),
+										_List_fromArray(
+											[iconBody]))
+									]);
+							},
+							iconLeft)),
+					_Utils_ap(
+						A2(
+							elm$core$Maybe$withDefault,
+							_List_Nil,
+							A2(
+								elm$core$Maybe$map,
+								function (_n10) {
+									var size_ = _n10.a;
+									var attrs_ = _n10.b;
+									var iconBody = _n10.c;
+									return _List_fromArray(
+										[
+											A3(
+											surprisetalk$elm_bulma$Bulma$Elements$icon,
+											size_,
+											A2(
+												elm$core$List$cons,
+												elm$html$Html$Attributes$class('is-right'),
+												attrs_),
+											_List_fromArray(
+												[iconBody]))
+										]);
+								},
+								iconRight)),
+						_List_Nil))));
+	});
+var surprisetalk$elm_bulma$Bulma$Form$controlModifiers = {expanded: false, iconLeft: elm$core$Maybe$Nothing, iconRight: elm$core$Maybe$Nothing, loading: elm$core$Maybe$Nothing};
+var surprisetalk$elm_bulma$Bulma$Form$controlButton = F3(
+	function (mods, attrs, attrs_) {
+		return A2(
+			elm$core$Basics$composeL,
+			A2(
+				elm$core$Basics$composeL,
+				A2(surprisetalk$elm_bulma$Bulma$Form$control, surprisetalk$elm_bulma$Bulma$Form$controlModifiers, attrs),
+				surprisetalk$elm_bulma$Helpers$ls),
+			A2(surprisetalk$elm_bulma$Bulma$Elements$button, mods, attrs_));
+	});
+var surprisetalk$elm_bulma$Bulma$Classes$checkbox = elm$html$Html$Attributes$class('checkbox');
+var surprisetalk$elm_bulma$Bulma$Form$controlCheckBox = F5(
+	function (disabled, attrs, attrs_, attrs__, htmls) {
+		return A3(
+			surprisetalk$elm_bulma$Bulma$Form$control,
+			surprisetalk$elm_bulma$Bulma$Form$controlModifiers,
+			attrs,
+			surprisetalk$elm_bulma$Helpers$ls(
+				A4(
+					surprisetalk$elm_bulma$Helpers$node,
+					'label',
+					_List_fromArray(
+						[
+							elm$html$Html$Attributes$disabled(disabled),
+							surprisetalk$elm_bulma$Bulma$Classes$checkbox
+						]),
+					attrs_,
+					A2(
+						elm$core$List$cons,
+						A4(
+							surprisetalk$elm_bulma$Helpers$node,
+							'input',
+							_List_fromArray(
+								[
+									elm$html$Html$Attributes$disabled(disabled),
+									elm$html$Html$Attributes$type_('checkbox')
+								]),
+							attrs__,
+							_List_Nil),
+						A2(
+							elm$core$List$cons,
+							elm$html$Html$text(' '),
+							htmls)))));
+	});
+var surprisetalk$elm_bulma$Bulma$Classes$help = elm$html$Html$Attributes$class('help');
+var surprisetalk$elm_bulma$Bulma$Form$help = function (color) {
+	return A2(
+		surprisetalk$elm_bulma$Helpers$node,
+		'p',
+		_List_fromArray(
+			[
+				surprisetalk$elm_bulma$Bulma$Classes$help,
+				function () {
+				switch (color.$) {
+					case 'Default':
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					case 'White':
+						return surprisetalk$elm_bulma$Bulma$Classes$isWhite;
+					case 'Light':
+						return surprisetalk$elm_bulma$Bulma$Classes$isLight;
+					case 'Dark':
+						return surprisetalk$elm_bulma$Bulma$Classes$isDark;
+					case 'Black':
+						return surprisetalk$elm_bulma$Bulma$Classes$isBlack;
+					case 'Primary':
+						return surprisetalk$elm_bulma$Bulma$Classes$isPrimary;
+					case 'Link':
+						return surprisetalk$elm_bulma$Bulma$Classes$isLink;
+					case 'Info':
+						return surprisetalk$elm_bulma$Bulma$Classes$isInfo;
+					case 'Success':
+						return surprisetalk$elm_bulma$Bulma$Classes$isSuccess;
+					case 'Warning':
+						return surprisetalk$elm_bulma$Bulma$Classes$isWarning;
+					default:
+						return surprisetalk$elm_bulma$Bulma$Classes$isDanger;
+				}
+			}()
+			]));
+};
+var surprisetalk$elm_bulma$Bulma$Form$controlHelp = surprisetalk$elm_bulma$Bulma$Form$help;
+var elm$html$Html$Attributes$readonly = elm$html$Html$Attributes$boolProperty('readOnly');
+var surprisetalk$elm_bulma$Bulma$Classes$input = elm$html$Html$Attributes$class('input');
+var surprisetalk$elm_bulma$Bulma$Form$controlInput = F3(
+	function (mods, attrs, attrs_) {
+		var size = mods.size;
+		var state = mods.state;
+		var color = mods.color;
+		var expanded = mods.expanded;
+		var rounded = mods.rounded;
+		var readonly = mods.readonly;
+		var disabled = mods.disabled;
+		var iconLeft = mods.iconLeft;
+		var iconRight = mods.iconRight;
+		var controlMods = {
+			expanded: expanded,
+			iconLeft: iconLeft,
+			iconRight: iconRight,
+			loading: function () {
+				if (state.$ === 'Loading') {
+					return elm$core$Maybe$Just(size);
+				} else {
+					return elm$core$Maybe$Nothing;
+				}
+			}()
+		};
+		return A2(
+			elm$core$Basics$composeL,
+			A2(
+				elm$core$Basics$composeL,
+				A2(surprisetalk$elm_bulma$Bulma$Form$control, controlMods, attrs),
+				surprisetalk$elm_bulma$Helpers$ls),
+			A3(
+				surprisetalk$elm_bulma$Helpers$node,
+				'input',
+				_List_fromArray(
+					[
+						surprisetalk$elm_bulma$Bulma$Classes$input,
+						elm$html$Html$Attributes$disabled(disabled),
+						function () {
+						if (readonly) {
+							return elm$html$Html$Attributes$readonly(readonly);
+						} else {
+							return surprisetalk$elm_bulma$Bulma$Classes$none;
+						}
+					}(),
+						function () {
+						switch (size.$) {
+							case 'Small':
+								return surprisetalk$elm_bulma$Bulma$Classes$isSmall;
+							case 'Standard':
+								return surprisetalk$elm_bulma$Bulma$Classes$none;
+							case 'Medium':
+								return surprisetalk$elm_bulma$Bulma$Classes$isMedium;
+							default:
+								return surprisetalk$elm_bulma$Bulma$Classes$isLarge;
+						}
+					}(),
+						function () {
+						switch (state.$) {
+							case 'Hover':
+								return surprisetalk$elm_bulma$Bulma$Classes$isHovered;
+							case 'Focus':
+								return surprisetalk$elm_bulma$Bulma$Classes$isFocused;
+							case 'Active':
+								return surprisetalk$elm_bulma$Bulma$Classes$isActive;
+							case 'Loading':
+								return surprisetalk$elm_bulma$Bulma$Classes$isLoading;
+							default:
+								return surprisetalk$elm_bulma$Bulma$Classes$none;
+						}
+					}(),
+						function () {
+						switch (color.$) {
+							case 'Default':
+								return surprisetalk$elm_bulma$Bulma$Classes$none;
+							case 'White':
+								return surprisetalk$elm_bulma$Bulma$Classes$isWhite;
+							case 'Light':
+								return surprisetalk$elm_bulma$Bulma$Classes$isLight;
+							case 'Dark':
+								return surprisetalk$elm_bulma$Bulma$Classes$isDark;
+							case 'Black':
+								return surprisetalk$elm_bulma$Bulma$Classes$isBlack;
+							case 'Primary':
+								return surprisetalk$elm_bulma$Bulma$Classes$isPrimary;
+							case 'Info':
+								return surprisetalk$elm_bulma$Bulma$Classes$isInfo;
+							case 'Success':
+								return surprisetalk$elm_bulma$Bulma$Classes$isSuccess;
+							case 'Warning':
+								return surprisetalk$elm_bulma$Bulma$Classes$isWarning;
+							case 'Danger':
+								return surprisetalk$elm_bulma$Bulma$Classes$isDanger;
+							default:
+								return surprisetalk$elm_bulma$Bulma$Classes$isLink;
+						}
+					}(),
+						function () {
+						if (!rounded) {
+							return surprisetalk$elm_bulma$Bulma$Classes$none;
+						} else {
+							return surprisetalk$elm_bulma$Bulma$Classes$isRounded;
+						}
+					}()
+					]),
+				attrs_));
+	});
+var surprisetalk$elm_bulma$Bulma$Form$controlInputModifiers = {color: surprisetalk$elm_bulma$Bulma$Modifiers$Default, disabled: false, expanded: false, iconLeft: elm$core$Maybe$Nothing, iconRight: elm$core$Maybe$Nothing, readonly: false, rounded: false, size: surprisetalk$elm_bulma$Bulma$Modifiers$Standard, state: surprisetalk$elm_bulma$Bulma$Modifiers$Blur};
+var surprisetalk$elm_bulma$Bulma$Classes$label = elm$html$Html$Attributes$class('label');
+var surprisetalk$elm_bulma$Bulma$Form$label = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'label',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$label]));
+var surprisetalk$elm_bulma$Bulma$Form$controlLabel = surprisetalk$elm_bulma$Bulma$Form$label;
+var surprisetalk$elm_bulma$Bulma$Form$controlRadio = surprisetalk$elm_bulma$Bulma$Form$control(surprisetalk$elm_bulma$Bulma$Form$controlModifiers);
+var elm$html$Html$Attributes$checked = elm$html$Html$Attributes$boolProperty('checked');
+var elm$html$Html$Attributes$name = elm$html$Html$Attributes$stringProperty('name');
+var surprisetalk$elm_bulma$Bulma$Classes$radio = elm$html$Html$Attributes$class('radio');
+var surprisetalk$elm_bulma$Bulma$Form$controlRadioButton = F6(
+	function (disabled, checked, name, attrs, attrs_, htmls) {
+		var labelAttrs = _List_fromArray(
+			[
+				surprisetalk$elm_bulma$Bulma$Classes$radio,
+				elm$html$Html$Attributes$disabled(disabled)
+			]);
+		var inputAttrs = _List_fromArray(
+			[
+				elm$html$Html$Attributes$name(name),
+				elm$html$Html$Attributes$type_('radio'),
+				elm$html$Html$Attributes$disabled(disabled),
+				elm$html$Html$Attributes$checked(checked)
+			]);
+		return A4(
+			surprisetalk$elm_bulma$Helpers$node,
+			'label',
+			labelAttrs,
+			attrs,
+			A2(
+				elm$core$List$cons,
+				A4(surprisetalk$elm_bulma$Helpers$node, 'input', inputAttrs, attrs_, _List_Nil),
+				A2(
+					elm$core$List$cons,
+					elm$html$Html$text(' '),
+					htmls)));
+	});
+var surprisetalk$elm_bulma$Bulma$Classes$isFullWidth = elm$html$Html$Attributes$class('is-fullwidth');
+var surprisetalk$elm_bulma$Bulma$Classes$select = elm$html$Html$Attributes$class('select');
+var surprisetalk$elm_bulma$Bulma$Form$controlSelect = F3(
+	function (mods, attrs, attrs_) {
+		var size = mods.size;
+		var state = mods.state;
+		var color = mods.color;
+		var expanded = mods.expanded;
+		var iconLeft = mods.iconLeft;
+		var controlMods = {
+			expanded: expanded,
+			iconLeft: iconLeft,
+			iconRight: elm$core$Maybe$Nothing,
+			loading: function () {
+				if (state.$ === 'Loading') {
+					return elm$core$Maybe$Just(size);
+				} else {
+					return elm$core$Maybe$Nothing;
+				}
+			}()
+		};
+		return A2(
+			elm$core$Basics$composeL,
+			A2(
+				elm$core$Basics$composeL,
+				A2(
+					elm$core$Basics$composeL,
+					A2(
+						elm$core$Basics$composeL,
+						A2(surprisetalk$elm_bulma$Bulma$Form$control, controlMods, attrs),
+						surprisetalk$elm_bulma$Helpers$ls),
+					A3(
+						surprisetalk$elm_bulma$Helpers$node,
+						'span',
+						_List_fromArray(
+							[surprisetalk$elm_bulma$Bulma$Classes$select]),
+						_List_Nil)),
+				surprisetalk$elm_bulma$Helpers$ls),
+			A3(
+				surprisetalk$elm_bulma$Helpers$node,
+				'select',
+				_List_fromArray(
+					[
+						function () {
+						switch (size.$) {
+							case 'Small':
+								return surprisetalk$elm_bulma$Bulma$Classes$isSmall;
+							case 'Standard':
+								return surprisetalk$elm_bulma$Bulma$Classes$none;
+							case 'Medium':
+								return surprisetalk$elm_bulma$Bulma$Classes$isMedium;
+							default:
+								return surprisetalk$elm_bulma$Bulma$Classes$isLarge;
+						}
+					}(),
+						function () {
+						switch (state.$) {
+							case 'Hover':
+								return surprisetalk$elm_bulma$Bulma$Classes$isHovered;
+							case 'Focus':
+								return surprisetalk$elm_bulma$Bulma$Classes$isFocused;
+							case 'Active':
+								return surprisetalk$elm_bulma$Bulma$Classes$isActive;
+							case 'Loading':
+								return surprisetalk$elm_bulma$Bulma$Classes$isLoading;
+							default:
+								return surprisetalk$elm_bulma$Bulma$Classes$none;
+						}
+					}(),
+						function () {
+						switch (color.$) {
+							case 'Default':
+								return surprisetalk$elm_bulma$Bulma$Classes$none;
+							case 'White':
+								return surprisetalk$elm_bulma$Bulma$Classes$isWhite;
+							case 'Light':
+								return surprisetalk$elm_bulma$Bulma$Classes$isLight;
+							case 'Dark':
+								return surprisetalk$elm_bulma$Bulma$Classes$isDark;
+							case 'Black':
+								return surprisetalk$elm_bulma$Bulma$Classes$isBlack;
+							case 'Primary':
+								return surprisetalk$elm_bulma$Bulma$Classes$isPrimary;
+							case 'Info':
+								return surprisetalk$elm_bulma$Bulma$Classes$isInfo;
+							case 'Success':
+								return surprisetalk$elm_bulma$Bulma$Classes$isSuccess;
+							case 'Warning':
+								return surprisetalk$elm_bulma$Bulma$Classes$isWarning;
+							case 'Danger':
+								return surprisetalk$elm_bulma$Bulma$Classes$isDanger;
+							default:
+								return surprisetalk$elm_bulma$Bulma$Classes$isLink;
+						}
+					}(),
+						function () {
+						if (expanded) {
+							return surprisetalk$elm_bulma$Bulma$Classes$isFullWidth;
+						} else {
+							return surprisetalk$elm_bulma$Bulma$Classes$none;
+						}
+					}()
+					]),
+				attrs_));
+	});
+var surprisetalk$elm_bulma$Bulma$Form$controlSelectModifiers = {color: surprisetalk$elm_bulma$Bulma$Modifiers$Default, expanded: false, iconLeft: elm$core$Maybe$Nothing, size: surprisetalk$elm_bulma$Bulma$Modifiers$Standard, state: surprisetalk$elm_bulma$Bulma$Modifiers$Blur};
+var surprisetalk$elm_bulma$Bulma$Classes$textarea = elm$html$Html$Attributes$class('textarea');
+var surprisetalk$elm_bulma$Bulma$Form$controlTextArea = F3(
+	function (mods, attrs, attrs_) {
+		var size = mods.size;
+		var state = mods.state;
+		var color = mods.color;
+		var readonly = mods.readonly;
+		var disabled = mods.disabled;
+		var controlMods = {
+			expanded: false,
+			iconLeft: elm$core$Maybe$Nothing,
+			iconRight: elm$core$Maybe$Nothing,
+			loading: function () {
+				if (state.$ === 'Loading') {
+					return elm$core$Maybe$Just(size);
+				} else {
+					return elm$core$Maybe$Nothing;
+				}
+			}()
+		};
+		return A2(
+			elm$core$Basics$composeL,
+			A2(
+				elm$core$Basics$composeL,
+				A2(surprisetalk$elm_bulma$Bulma$Form$control, controlMods, attrs),
+				surprisetalk$elm_bulma$Helpers$ls),
+			A3(
+				surprisetalk$elm_bulma$Helpers$node,
+				'textarea',
+				_List_fromArray(
+					[
+						surprisetalk$elm_bulma$Bulma$Classes$textarea,
+						elm$html$Html$Attributes$disabled(disabled),
+						function () {
+						if (readonly) {
+							return elm$html$Html$Attributes$readonly(readonly);
+						} else {
+							return surprisetalk$elm_bulma$Bulma$Classes$none;
+						}
+					}(),
+						function () {
+						switch (size.$) {
+							case 'Small':
+								return surprisetalk$elm_bulma$Bulma$Classes$isSmall;
+							case 'Standard':
+								return surprisetalk$elm_bulma$Bulma$Classes$none;
+							case 'Medium':
+								return surprisetalk$elm_bulma$Bulma$Classes$isMedium;
+							default:
+								return surprisetalk$elm_bulma$Bulma$Classes$isLarge;
+						}
+					}(),
+						function () {
+						switch (state.$) {
+							case 'Hover':
+								return surprisetalk$elm_bulma$Bulma$Classes$isHovered;
+							case 'Focus':
+								return surprisetalk$elm_bulma$Bulma$Classes$isFocused;
+							case 'Active':
+								return surprisetalk$elm_bulma$Bulma$Classes$isActive;
+							case 'Loading':
+								return surprisetalk$elm_bulma$Bulma$Classes$isLoading;
+							default:
+								return surprisetalk$elm_bulma$Bulma$Classes$none;
+						}
+					}(),
+						function () {
+						switch (color.$) {
+							case 'Default':
+								return surprisetalk$elm_bulma$Bulma$Classes$none;
+							case 'White':
+								return surprisetalk$elm_bulma$Bulma$Classes$isWhite;
+							case 'Light':
+								return surprisetalk$elm_bulma$Bulma$Classes$isLight;
+							case 'Dark':
+								return surprisetalk$elm_bulma$Bulma$Classes$isDark;
+							case 'Black':
+								return surprisetalk$elm_bulma$Bulma$Classes$isBlack;
+							case 'Primary':
+								return surprisetalk$elm_bulma$Bulma$Classes$isPrimary;
+							case 'Info':
+								return surprisetalk$elm_bulma$Bulma$Classes$isInfo;
+							case 'Success':
+								return surprisetalk$elm_bulma$Bulma$Classes$isSuccess;
+							case 'Warning':
+								return surprisetalk$elm_bulma$Bulma$Classes$isWarning;
+							case 'Danger':
+								return surprisetalk$elm_bulma$Bulma$Classes$isDanger;
+							default:
+								return surprisetalk$elm_bulma$Bulma$Classes$isLink;
+						}
+					}()
+					]),
+				attrs_));
+	});
+var surprisetalk$elm_bulma$Bulma$Form$controlTextAreaModifiers = {color: surprisetalk$elm_bulma$Bulma$Modifiers$Default, disabled: false, readonly: false, size: surprisetalk$elm_bulma$Bulma$Modifiers$Standard, state: surprisetalk$elm_bulma$Bulma$Modifiers$Blur};
+var surprisetalk$elm_bulma$Bulma$Classes$field = elm$html$Html$Attributes$class('field');
+var surprisetalk$elm_bulma$Bulma$Form$field = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'div',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$field]));
+var surprisetalk$elm_bulma$Bulma$Layout$NotSpaced = {$: 'NotSpaced'};
 var surprisetalk$elm_bulma$Bulma$Classes$container = elm$html$Html$Attributes$class('container');
 var surprisetalk$elm_bulma$Bulma$Layout$container = A2(
 	surprisetalk$elm_bulma$Helpers$node,
 	'div',
 	_List_fromArray(
 		[surprisetalk$elm_bulma$Bulma$Classes$container]));
+var surprisetalk$elm_bulma$Bulma$Classes$section = elm$html$Html$Attributes$class('section');
+var surprisetalk$elm_bulma$Bulma$Layout$section = function (spacing) {
+	return A2(
+		surprisetalk$elm_bulma$Helpers$node,
+		'section',
+		_List_fromArray(
+			[
+				surprisetalk$elm_bulma$Bulma$Classes$section,
+				function () {
+				switch (spacing.$) {
+					case 'NotSpaced':
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					case 'Spaced':
+						return surprisetalk$elm_bulma$Bulma$Classes$isMedium;
+					default:
+						return surprisetalk$elm_bulma$Bulma$Classes$isLarge;
+				}
+			}()
+			]));
+};
+var surprisetalk$elm_bulma$Bulma$Modifiers$Black = {$: 'Black'};
+var surprisetalk$elm_bulma$Bulma$Modifiers$Danger = {$: 'Danger'};
+var surprisetalk$elm_bulma$Bulma$Modifiers$Dark = {$: 'Dark'};
+var surprisetalk$elm_bulma$Bulma$Modifiers$Info = {$: 'Info'};
+var surprisetalk$elm_bulma$Bulma$Modifiers$Light = {$: 'Light'};
+var surprisetalk$elm_bulma$Bulma$Modifiers$Link = {$: 'Link'};
+var surprisetalk$elm_bulma$Bulma$Modifiers$Primary = {$: 'Primary'};
+var surprisetalk$elm_bulma$Bulma$Modifiers$Success = {$: 'Success'};
+var surprisetalk$elm_bulma$Bulma$Modifiers$Warning = {$: 'Warning'};
+var surprisetalk$elm_bulma$Bulma$Modifiers$White = {$: 'White'};
+var surprisetalk$elm_bulma$Bulma$Modifiers$fullWidth = surprisetalk$elm_bulma$Bulma$Classes$isFullWidth;
+var author$project$Example$exampleElementsAndComponents = A3(
+	surprisetalk$elm_bulma$Bulma$Layout$section,
+	surprisetalk$elm_bulma$Bulma$Layout$NotSpaced,
+	_List_Nil,
+	_List_fromArray(
+		[
+			A2(
+			surprisetalk$elm_bulma$Bulma$Layout$container,
+			_List_Nil,
+			_List_fromArray(
+				[
+					A2(
+					author$project$Example$demoArticle,
+					'Elements',
+					_List_fromArray(
+						[
+							A3(
+							author$project$Example$demoSection,
+							'Form',
+							_List_Nil,
+							_List_fromArray(
+								[
+									A2(
+									surprisetalk$elm_bulma$Bulma$Form$field,
+									_List_Nil,
+									_List_fromArray(
+										[
+											A2(
+											surprisetalk$elm_bulma$Bulma$Form$controlLabel,
+											_List_Nil,
+											_List_fromArray(
+												[
+													elm$html$Html$text('Form Label')
+												])),
+											A4(
+											surprisetalk$elm_bulma$Bulma$Form$controlInput,
+											surprisetalk$elm_bulma$Bulma$Form$controlInputModifiers,
+											_List_Nil,
+											_List_fromArray(
+												[
+													elm$html$Html$Attributes$placeholder('Input')
+												]),
+											_List_Nil),
+											A3(
+											surprisetalk$elm_bulma$Bulma$Form$controlHelp,
+											surprisetalk$elm_bulma$Bulma$Modifiers$Default,
+											_List_Nil,
+											_List_fromArray(
+												[
+													elm$html$Html$text('This field isn\'t required!')
+												]))
+										])),
+									A2(
+									surprisetalk$elm_bulma$Bulma$Form$field,
+									_List_Nil,
+									_List_fromArray(
+										[
+											A4(
+											surprisetalk$elm_bulma$Bulma$Form$controlSelect,
+											surprisetalk$elm_bulma$Bulma$Form$controlSelectModifiers,
+											_List_Nil,
+											_List_Nil,
+											_List_fromArray(
+												[
+													A2(
+													elm$html$Html$option,
+													_List_Nil,
+													_List_fromArray(
+														[
+															elm$html$Html$text('Dropdown')
+														]))
+												]))
+										])),
+									A2(
+									surprisetalk$elm_bulma$Bulma$Form$field,
+									_List_Nil,
+									_List_fromArray(
+										[
+											A4(
+											surprisetalk$elm_bulma$Bulma$Form$controlTextArea,
+											surprisetalk$elm_bulma$Bulma$Form$controlTextAreaModifiers,
+											_List_Nil,
+											_List_fromArray(
+												[
+													elm$html$Html$Attributes$placeholder('Textarea')
+												]),
+											_List_Nil)
+										])),
+									A2(
+									surprisetalk$elm_bulma$Bulma$Form$field,
+									_List_Nil,
+									_List_fromArray(
+										[
+											A5(
+											surprisetalk$elm_bulma$Bulma$Form$controlCheckBox,
+											false,
+											_List_Nil,
+											_List_Nil,
+											_List_Nil,
+											_List_fromArray(
+												[
+													elm$html$Html$text('Checkbox')
+												]))
+										])),
+									A2(
+									surprisetalk$elm_bulma$Bulma$Form$field,
+									_List_Nil,
+									_List_fromArray(
+										[
+											A2(
+											surprisetalk$elm_bulma$Bulma$Form$controlRadio,
+											_List_Nil,
+											_List_fromArray(
+												[
+													A6(
+													surprisetalk$elm_bulma$Bulma$Form$controlRadioButton,
+													false,
+													true,
+													'yes',
+													_List_Nil,
+													_List_Nil,
+													_List_fromArray(
+														[
+															elm$html$Html$text('Radio')
+														])),
+													A6(
+													surprisetalk$elm_bulma$Bulma$Form$controlRadioButton,
+													false,
+													false,
+													'no',
+													_List_Nil,
+													_List_Nil,
+													_List_fromArray(
+														[
+															elm$html$Html$text('Button')
+														]))
+												]))
+										])),
+									A2(
+									surprisetalk$elm_bulma$Bulma$Form$field,
+									_List_Nil,
+									_List_fromArray(
+										[
+											A4(
+											surprisetalk$elm_bulma$Bulma$Form$controlButton,
+											_Utils_update(
+												surprisetalk$elm_bulma$Bulma$Elements$buttonModifiers,
+												{color: surprisetalk$elm_bulma$Bulma$Modifiers$Link}),
+											_List_Nil,
+											_List_Nil,
+											_List_fromArray(
+												[
+													elm$html$Html$text('Button')
+												]))
+										]))
+								])),
+							A3(
+							author$project$Example$demoSection,
+							'Box',
+							_List_Nil,
+							_List_fromArray(
+								[
+									A2(
+									surprisetalk$elm_bulma$Bulma$Elements$box,
+									_List_Nil,
+									_List_fromArray(
+										[author$project$Example$exampleMediaObject]))
+								])),
+							A3(
+							author$project$Example$demoSection,
+							'Button',
+							_List_Nil,
+							_List_fromArray(
+								[
+									A3(
+									surprisetalk$elm_bulma$Bulma$Elements$buttons,
+									surprisetalk$elm_bulma$Bulma$Modifiers$Left,
+									_List_Nil,
+									A2(
+										elm$core$List$map,
+										function (_n0) {
+											var color = _n0.a;
+											var label = _n0.b;
+											return A3(
+												surprisetalk$elm_bulma$Bulma$Elements$button,
+												_Utils_update(
+													surprisetalk$elm_bulma$Bulma$Elements$buttonModifiers,
+													{color: color}),
+												_List_Nil,
+												_List_fromArray(
+													[
+														elm$html$Html$text(label)
+													]));
+										},
+										_List_fromArray(
+											[
+												_Utils_Tuple2(surprisetalk$elm_bulma$Bulma$Modifiers$Default, 'Default'),
+												_Utils_Tuple2(surprisetalk$elm_bulma$Bulma$Modifiers$White, 'White'),
+												_Utils_Tuple2(surprisetalk$elm_bulma$Bulma$Modifiers$Light, 'Light'),
+												_Utils_Tuple2(surprisetalk$elm_bulma$Bulma$Modifiers$Dark, 'Dark'),
+												_Utils_Tuple2(surprisetalk$elm_bulma$Bulma$Modifiers$Black, 'Black')
+											]))),
+									A3(
+									surprisetalk$elm_bulma$Bulma$Elements$buttons,
+									surprisetalk$elm_bulma$Bulma$Modifiers$Left,
+									_List_Nil,
+									A2(
+										elm$core$List$map,
+										function (_n1) {
+											var color = _n1.a;
+											var label = _n1.b;
+											return A3(
+												surprisetalk$elm_bulma$Bulma$Elements$button,
+												_Utils_update(
+													surprisetalk$elm_bulma$Bulma$Elements$buttonModifiers,
+													{color: color}),
+												_List_Nil,
+												_List_fromArray(
+													[
+														elm$html$Html$text(label)
+													]));
+										},
+										_List_fromArray(
+											[
+												_Utils_Tuple2(surprisetalk$elm_bulma$Bulma$Modifiers$Primary, 'Primary'),
+												_Utils_Tuple2(surprisetalk$elm_bulma$Bulma$Modifiers$Link, 'Link'),
+												_Utils_Tuple2(surprisetalk$elm_bulma$Bulma$Modifiers$Info, 'Info'),
+												_Utils_Tuple2(surprisetalk$elm_bulma$Bulma$Modifiers$Success, 'Success'),
+												_Utils_Tuple2(surprisetalk$elm_bulma$Bulma$Modifiers$Warning, 'Warning'),
+												_Utils_Tuple2(surprisetalk$elm_bulma$Bulma$Modifiers$Danger, 'Danger')
+											])))
+								])),
+							A3(
+							author$project$Example$demoSection,
+							'Notification',
+							_List_Nil,
+							_List_fromArray(
+								[
+									A4(
+									surprisetalk$elm_bulma$Bulma$Elements$notificationWithDelete,
+									surprisetalk$elm_bulma$Bulma$Modifiers$Primary,
+									_List_Nil,
+									author$project$Example$NoOp,
+									_List_fromArray(
+										[
+											elm$html$Html$text('Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Sit amet, consectetur adipiscing elit')
+										]))
+								])),
+							A3(
+							author$project$Example$demoSection,
+							'Progress Bar',
+							_List_Nil,
+							_List_fromArray(
+								[
+									A3(
+									surprisetalk$elm_bulma$Bulma$Elements$easyProgress,
+									_Utils_update(
+										surprisetalk$elm_bulma$Bulma$Elements$progressModifiers,
+										{color: surprisetalk$elm_bulma$Bulma$Modifiers$Primary}),
+									_List_Nil,
+									0.4)
+								])),
+							A3(
+							author$project$Example$demoSection,
+							'Tags',
+							_List_Nil,
+							_List_fromArray(
+								[
+									A2(
+									surprisetalk$elm_bulma$Bulma$Elements$tags,
+									_List_Nil,
+									A2(
+										elm$core$List$map,
+										function (_n2) {
+											var color = _n2.a;
+											var label = _n2.b;
+											return A3(
+												surprisetalk$elm_bulma$Bulma$Elements$tag,
+												_Utils_update(
+													surprisetalk$elm_bulma$Bulma$Elements$tagModifiers,
+													{color: color}),
+												_List_Nil,
+												_List_fromArray(
+													[
+														elm$html$Html$text(label)
+													]));
+										},
+										_List_fromArray(
+											[
+												_Utils_Tuple2(surprisetalk$elm_bulma$Bulma$Modifiers$Primary, 'Primary'),
+												_Utils_Tuple2(surprisetalk$elm_bulma$Bulma$Modifiers$Link, 'Link'),
+												_Utils_Tuple2(surprisetalk$elm_bulma$Bulma$Modifiers$Info, 'Info'),
+												_Utils_Tuple2(surprisetalk$elm_bulma$Bulma$Modifiers$Success, 'Success'),
+												_Utils_Tuple2(surprisetalk$elm_bulma$Bulma$Modifiers$Warning, 'Warning'),
+												_Utils_Tuple2(surprisetalk$elm_bulma$Bulma$Modifiers$Danger, 'Danger')
+											]))),
+									A2(
+									surprisetalk$elm_bulma$Bulma$Elements$tags,
+									_List_Nil,
+									A2(
+										elm$core$List$map,
+										function (_n3) {
+											var color = _n3.a;
+											var label = _n3.b;
+											return A3(
+												surprisetalk$elm_bulma$Bulma$Elements$tag,
+												_Utils_update(
+													surprisetalk$elm_bulma$Bulma$Elements$tagModifiers,
+													{color: color}),
+												_List_Nil,
+												_List_fromArray(
+													[
+														elm$html$Html$text(label)
+													]));
+										},
+										_List_fromArray(
+											[
+												_Utils_Tuple2(surprisetalk$elm_bulma$Bulma$Modifiers$Default, 'Default'),
+												_Utils_Tuple2(surprisetalk$elm_bulma$Bulma$Modifiers$White, 'White'),
+												_Utils_Tuple2(surprisetalk$elm_bulma$Bulma$Modifiers$Light, 'Light'),
+												_Utils_Tuple2(surprisetalk$elm_bulma$Bulma$Modifiers$Dark, 'Dark'),
+												_Utils_Tuple2(surprisetalk$elm_bulma$Bulma$Modifiers$Black, 'Black')
+											])))
+								]))
+						])),
+					A2(
+					author$project$Example$demoArticle,
+					'Components',
+					_List_fromArray(
+						[
+							A3(
+							author$project$Example$demoSection,
+							'Card',
+							_List_Nil,
+							_List_fromArray(
+								[
+									A3(
+									surprisetalk$elm_bulma$Bulma$Columns$columns,
+									surprisetalk$elm_bulma$Bulma$Columns$columnsModifiers,
+									_List_Nil,
+									_List_fromArray(
+										[
+											A3(
+											surprisetalk$elm_bulma$Bulma$Columns$column,
+											surprisetalk$elm_bulma$Bulma$Columns$columnModifiers,
+											_List_Nil,
+											_List_fromArray(
+												[
+													A2(
+													surprisetalk$elm_bulma$Bulma$Components$card,
+													_List_Nil,
+													_List_fromArray(
+														[
+															A2(
+															surprisetalk$elm_bulma$Bulma$Components$cardImage,
+															_List_Nil,
+															_List_fromArray(
+																[
+																	A3(
+																	surprisetalk$elm_bulma$Bulma$Elements$image,
+																	surprisetalk$elm_bulma$Bulma$Elements$FourByThree,
+																	_List_Nil,
+																	_List_fromArray(
+																		[
+																			A2(
+																			elm$html$Html$img,
+																			_List_fromArray(
+																				[
+																					elm$html$Html$Attributes$src('https://bulma.io/images/placeholders/1280x960.png')
+																				]),
+																			_List_Nil)
+																		]))
+																])),
+															A2(
+															surprisetalk$elm_bulma$Bulma$Components$cardContent,
+															_List_Nil,
+															_List_fromArray(
+																[
+																	A2(
+																	surprisetalk$elm_bulma$Bulma$Layout$media,
+																	_List_Nil,
+																	_List_fromArray(
+																		[
+																			A2(
+																			surprisetalk$elm_bulma$Bulma$Layout$mediaLeft,
+																			_List_Nil,
+																			_List_fromArray(
+																				[
+																					A3(
+																					surprisetalk$elm_bulma$Bulma$Elements$image,
+																					surprisetalk$elm_bulma$Bulma$Elements$OneByOne(surprisetalk$elm_bulma$Bulma$Elements$X48),
+																					_List_Nil,
+																					_List_fromArray(
+																						[
+																							A2(
+																							elm$html$Html$img,
+																							_List_fromArray(
+																								[
+																									elm$html$Html$Attributes$src('https://bulma.io/images/placeholders/96x96.png')
+																								]),
+																							_List_Nil)
+																						]))
+																				])),
+																			A2(
+																			surprisetalk$elm_bulma$Bulma$Layout$mediaContent,
+																			_List_Nil,
+																			A4(
+																				surprisetalk$elm_bulma$Bulma$Elements$easyTitleWithSubtitle,
+																				false,
+																				surprisetalk$elm_bulma$Bulma$Elements$H4,
+																				_List_fromArray(
+																					[
+																						elm$html$Html$text('John Smith')
+																					]),
+																				_List_fromArray(
+																					[
+																						elm$html$Html$text('@johnsmith')
+																					])))
+																		])),
+																	A3(
+																	surprisetalk$elm_bulma$Bulma$Elements$content,
+																	surprisetalk$elm_bulma$Bulma$Modifiers$Standard,
+																	_List_Nil,
+																	_List_fromArray(
+																		[
+																			elm$html$Html$text('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.'),
+																			A2(
+																			elm$html$Html$a,
+																			_List_Nil,
+																			_List_fromArray(
+																				[
+																					elm$html$Html$text('@bulmaio')
+																				])),
+																			elm$html$Html$text('.'),
+																			A2(
+																			elm$html$Html$a,
+																			_List_Nil,
+																			_List_fromArray(
+																				[
+																					elm$html$Html$text('#css')
+																				])),
+																			elm$html$Html$text(' '),
+																			A2(
+																			elm$html$Html$a,
+																			_List_Nil,
+																			_List_fromArray(
+																				[
+																					elm$html$Html$text('#responsive')
+																				])),
+																			A2(
+																			elm$html$Html$small,
+																			_List_Nil,
+																			_List_fromArray(
+																				[
+																					elm$html$Html$text('11:09 PM - 1 Jan 2016')
+																				]))
+																		]))
+																]))
+														]))
+												])),
+											A3(
+											surprisetalk$elm_bulma$Bulma$Columns$column,
+											surprisetalk$elm_bulma$Bulma$Columns$columnModifiers,
+											_List_Nil,
+											_List_fromArray(
+												[
+													A2(
+													surprisetalk$elm_bulma$Bulma$Components$card,
+													_List_Nil,
+													_List_fromArray(
+														[
+															A2(
+															surprisetalk$elm_bulma$Bulma$Components$cardContent,
+															_List_Nil,
+															A4(
+																surprisetalk$elm_bulma$Bulma$Elements$easyTitleWithSubtitle,
+																false,
+																surprisetalk$elm_bulma$Bulma$Elements$H3,
+																_List_fromArray(
+																	[
+																		elm$html$Html$text('“There are two hard things in computer science: cache invalidation, naming things, and off-by-one errors.”')
+																	]),
+																_List_fromArray(
+																	[
+																		elm$html$Html$text('Jeff Atwood')
+																	]))),
+															A2(
+															surprisetalk$elm_bulma$Bulma$Components$cardFooter,
+															_List_Nil,
+															_List_fromArray(
+																[
+																	A2(
+																	surprisetalk$elm_bulma$Bulma$Components$cardFooterItem,
+																	_List_Nil,
+																	_List_fromArray(
+																		[
+																			A2(
+																			elm$html$Html$span,
+																			_List_Nil,
+																			_List_fromArray(
+																				[
+																					elm$html$Html$text('View on '),
+																					A2(
+																					elm$html$Html$a,
+																					_List_Nil,
+																					_List_fromArray(
+																						[
+																							elm$html$Html$text('Twitter')
+																						]))
+																				]))
+																		])),
+																	A2(
+																	surprisetalk$elm_bulma$Bulma$Components$cardFooterItem,
+																	_List_Nil,
+																	_List_fromArray(
+																		[
+																			A2(
+																			elm$html$Html$span,
+																			_List_Nil,
+																			_List_fromArray(
+																				[
+																					elm$html$Html$text('Share on '),
+																					A2(
+																					elm$html$Html$a,
+																					_List_Nil,
+																					_List_fromArray(
+																						[
+																							elm$html$Html$text('Facebook')
+																						]))
+																				]))
+																		]))
+																]))
+														]))
+												]))
+										]))
+								])),
+							A3(
+							author$project$Example$demoSection,
+							'Dropdown',
+							_List_fromArray(
+								[
+									A2(elm$html$Html$Attributes$style, 'height', '16rem')
+								]),
+							_List_fromArray(
+								[
+									A4(
+									surprisetalk$elm_bulma$Bulma$Components$dropdown,
+									true,
+									surprisetalk$elm_bulma$Bulma$Components$dropdownModifiers,
+									_List_Nil,
+									_List_fromArray(
+										[
+											A2(
+											surprisetalk$elm_bulma$Bulma$Components$dropdownTrigger,
+											_List_Nil,
+											_List_fromArray(
+												[
+													A3(
+													surprisetalk$elm_bulma$Bulma$Elements$button,
+													surprisetalk$elm_bulma$Bulma$Elements$buttonModifiers,
+													_List_fromArray(
+														[
+															A2(elm$html$Html$Attributes$attribute, 'aria-haspopup', 'true'),
+															A2(elm$html$Html$Attributes$attribute, 'aria-controls', 'dropdown-menu')
+														]),
+													_List_fromArray(
+														[
+															elm$html$Html$text('Dropdown button')
+														]))
+												])),
+											A3(
+											surprisetalk$elm_bulma$Bulma$Components$dropdownMenu,
+											_List_Nil,
+											_List_Nil,
+											_List_fromArray(
+												[
+													A3(
+													surprisetalk$elm_bulma$Bulma$Components$dropdownItem,
+													false,
+													_List_Nil,
+													_List_fromArray(
+														[
+															elm$html$Html$text('Dropdown item')
+														])),
+													A3(
+													surprisetalk$elm_bulma$Bulma$Components$dropdownItemLink,
+													false,
+													_List_Nil,
+													_List_fromArray(
+														[
+															elm$html$Html$text('Other dropdown item')
+														])),
+													A3(
+													surprisetalk$elm_bulma$Bulma$Components$dropdownItemLink,
+													true,
+													_List_Nil,
+													_List_fromArray(
+														[
+															elm$html$Html$text('Active dropdown item')
+														])),
+													A3(
+													surprisetalk$elm_bulma$Bulma$Components$dropdownItemLink,
+													false,
+													_List_Nil,
+													_List_fromArray(
+														[
+															elm$html$Html$text('Other item')
+														])),
+													A2(surprisetalk$elm_bulma$Bulma$Components$dropdownDivider, _List_Nil, _List_Nil),
+													A3(
+													surprisetalk$elm_bulma$Bulma$Components$dropdownItemLink,
+													false,
+													_List_Nil,
+													_List_fromArray(
+														[
+															elm$html$Html$text('With a divider')
+														]))
+												]))
+										]))
+								])),
+							A3(
+							author$project$Example$demoSection,
+							'Message',
+							_List_Nil,
+							_List_fromArray(
+								[
+									A3(
+									surprisetalk$elm_bulma$Bulma$Components$message,
+									_Utils_update(
+										surprisetalk$elm_bulma$Bulma$Components$messageModifiers,
+										{color: surprisetalk$elm_bulma$Bulma$Modifiers$Primary}),
+									_List_Nil,
+									_List_fromArray(
+										[
+											A3(
+											surprisetalk$elm_bulma$Bulma$Components$messageHeaderWithDelete,
+											_List_Nil,
+											author$project$Example$NoOp,
+											_List_fromArray(
+												[
+													elm$html$Html$text('Primary')
+												])),
+											A2(
+											surprisetalk$elm_bulma$Bulma$Components$messageBody,
+											_List_Nil,
+											_List_fromArray(
+												[
+													elm$html$Html$text('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.')
+												]))
+										]))
+								])),
+							A3(
+							author$project$Example$demoSection,
+							'Pagination',
+							_List_Nil,
+							_List_fromArray(
+								[
+									A3(
+									surprisetalk$elm_bulma$Bulma$Components$pagination,
+									surprisetalk$elm_bulma$Bulma$Modifiers$Left,
+									_List_Nil,
+									_List_fromArray(
+										[
+											A2(
+											surprisetalk$elm_bulma$Bulma$Components$paginationPrev,
+											_List_Nil,
+											_List_fromArray(
+												[
+													elm$html$Html$text('Previous')
+												])),
+											A2(
+											surprisetalk$elm_bulma$Bulma$Components$paginationNext,
+											_List_Nil,
+											_List_fromArray(
+												[
+													elm$html$Html$text('Next')
+												])),
+											A2(
+											surprisetalk$elm_bulma$Bulma$Components$paginationList,
+											_List_Nil,
+											_List_fromArray(
+												[
+													A3(
+													surprisetalk$elm_bulma$Bulma$Components$paginationLink,
+													false,
+													_List_Nil,
+													_List_fromArray(
+														[
+															elm$html$Html$text('1')
+														])),
+													A2(
+													surprisetalk$elm_bulma$Bulma$Components$paginationEllipsis,
+													_List_Nil,
+													_List_fromArray(
+														[
+															elm$html$Html$text('…')
+														])),
+													A3(
+													surprisetalk$elm_bulma$Bulma$Components$paginationLink,
+													false,
+													_List_Nil,
+													_List_fromArray(
+														[
+															elm$html$Html$text('45')
+														])),
+													A3(
+													surprisetalk$elm_bulma$Bulma$Components$paginationLink,
+													true,
+													_List_Nil,
+													_List_fromArray(
+														[
+															elm$html$Html$text('46')
+														])),
+													A3(
+													surprisetalk$elm_bulma$Bulma$Components$paginationLink,
+													false,
+													_List_Nil,
+													_List_fromArray(
+														[
+															elm$html$Html$text('47')
+														])),
+													A2(
+													surprisetalk$elm_bulma$Bulma$Components$paginationEllipsis,
+													_List_Nil,
+													_List_fromArray(
+														[
+															elm$html$Html$text('…')
+														])),
+													A3(
+													surprisetalk$elm_bulma$Bulma$Components$paginationLink,
+													false,
+													_List_Nil,
+													_List_fromArray(
+														[
+															elm$html$Html$text('83')
+														]))
+												]))
+										]))
+								])),
+							A3(
+							author$project$Example$demoSection,
+							'Tabs',
+							_List_Nil,
+							_List_fromArray(
+								[
+									A4(
+									surprisetalk$elm_bulma$Bulma$Components$tabs,
+									_Utils_update(
+										surprisetalk$elm_bulma$Bulma$Components$tabsModifiers,
+										{style: surprisetalk$elm_bulma$Bulma$Components$Boxed}),
+									_List_Nil,
+									_List_Nil,
+									_List_fromArray(
+										[
+											A4(
+											surprisetalk$elm_bulma$Bulma$Components$tab,
+											true,
+											_List_Nil,
+											_List_Nil,
+											_List_fromArray(
+												[
+													A3(
+													surprisetalk$elm_bulma$Bulma$Elements$icon,
+													surprisetalk$elm_bulma$Bulma$Modifiers$Standard,
+													_List_Nil,
+													_List_fromArray(
+														[
+															A2(
+															elm$html$Html$i,
+															_List_fromArray(
+																[
+																	elm$html$Html$Attributes$class('fa fa-image')
+																]),
+															_List_Nil)
+														])),
+													elm$html$Html$text('Pictures')
+												])),
+											A4(
+											surprisetalk$elm_bulma$Bulma$Components$tab,
+											false,
+											_List_Nil,
+											_List_Nil,
+											_List_fromArray(
+												[
+													A3(
+													surprisetalk$elm_bulma$Bulma$Elements$icon,
+													surprisetalk$elm_bulma$Bulma$Modifiers$Standard,
+													_List_Nil,
+													_List_fromArray(
+														[
+															A2(
+															elm$html$Html$i,
+															_List_fromArray(
+																[
+																	elm$html$Html$Attributes$class('fa fa-music')
+																]),
+															_List_Nil)
+														])),
+													elm$html$Html$text('Music')
+												])),
+											A4(
+											surprisetalk$elm_bulma$Bulma$Components$tab,
+											false,
+											_List_Nil,
+											_List_Nil,
+											_List_fromArray(
+												[
+													A3(
+													surprisetalk$elm_bulma$Bulma$Elements$icon,
+													surprisetalk$elm_bulma$Bulma$Modifiers$Standard,
+													_List_Nil,
+													_List_fromArray(
+														[
+															A2(
+															elm$html$Html$i,
+															_List_fromArray(
+																[
+																	elm$html$Html$Attributes$class('fa fa-film')
+																]),
+															_List_Nil)
+														])),
+													elm$html$Html$text('Videos')
+												])),
+											A4(
+											surprisetalk$elm_bulma$Bulma$Components$tab,
+											false,
+											_List_Nil,
+											_List_Nil,
+											_List_fromArray(
+												[
+													A3(
+													surprisetalk$elm_bulma$Bulma$Elements$icon,
+													surprisetalk$elm_bulma$Bulma$Modifiers$Standard,
+													_List_Nil,
+													_List_fromArray(
+														[
+															A2(
+															elm$html$Html$i,
+															_List_fromArray(
+																[
+																	elm$html$Html$Attributes$class('fa fa-file-pdf-o')
+																]),
+															_List_Nil)
+														])),
+													elm$html$Html$text('Documents')
+												]))
+										]))
+								])),
+							A3(
+							author$project$Example$demoSection,
+							'Media Object',
+							_List_Nil,
+							_List_fromArray(
+								[author$project$Example$exampleMediaObject])),
+							A3(
+							author$project$Example$demoSection,
+							'Menu & Panel',
+							_List_Nil,
+							_List_fromArray(
+								[
+									A3(
+									surprisetalk$elm_bulma$Bulma$Columns$columns,
+									surprisetalk$elm_bulma$Bulma$Columns$columnsModifiers,
+									_List_Nil,
+									_List_fromArray(
+										[
+											A3(
+											surprisetalk$elm_bulma$Bulma$Columns$column,
+											surprisetalk$elm_bulma$Bulma$Columns$columnModifiers,
+											_List_Nil,
+											_List_fromArray(
+												[
+													A2(
+													surprisetalk$elm_bulma$Bulma$Components$menu,
+													_List_Nil,
+													_List_fromArray(
+														[
+															A2(
+															surprisetalk$elm_bulma$Bulma$Components$menuLabel,
+															_List_Nil,
+															_List_fromArray(
+																[
+																	elm$html$Html$text('General')
+																])),
+															A2(
+															surprisetalk$elm_bulma$Bulma$Components$menuList,
+															_List_Nil,
+															_List_fromArray(
+																[
+																	A2(
+																	surprisetalk$elm_bulma$Bulma$Components$menuListItem,
+																	_List_Nil,
+																	_List_fromArray(
+																		[
+																			A3(
+																			surprisetalk$elm_bulma$Bulma$Components$menuListItemLink,
+																			false,
+																			_List_Nil,
+																			_List_fromArray(
+																				[
+																					elm$html$Html$text('Dashboard')
+																				]))
+																		])),
+																	A2(
+																	surprisetalk$elm_bulma$Bulma$Components$menuListItem,
+																	_List_Nil,
+																	_List_fromArray(
+																		[
+																			A3(
+																			surprisetalk$elm_bulma$Bulma$Components$menuListItemLink,
+																			false,
+																			_List_Nil,
+																			_List_fromArray(
+																				[
+																					elm$html$Html$text('Customers')
+																				]))
+																		]))
+																])),
+															A2(
+															surprisetalk$elm_bulma$Bulma$Components$menuLabel,
+															_List_Nil,
+															_List_fromArray(
+																[
+																	elm$html$Html$text('Administration')
+																])),
+															A2(
+															surprisetalk$elm_bulma$Bulma$Components$menuList,
+															_List_Nil,
+															_List_fromArray(
+																[
+																	A2(
+																	surprisetalk$elm_bulma$Bulma$Components$menuListItem,
+																	_List_Nil,
+																	_List_fromArray(
+																		[
+																			A3(
+																			surprisetalk$elm_bulma$Bulma$Components$menuListItemLink,
+																			false,
+																			_List_Nil,
+																			_List_fromArray(
+																				[
+																					elm$html$Html$text('Team Settings')
+																				]))
+																		])),
+																	A2(
+																	surprisetalk$elm_bulma$Bulma$Components$menuListItem,
+																	_List_Nil,
+																	_List_fromArray(
+																		[
+																			A3(
+																			surprisetalk$elm_bulma$Bulma$Components$menuListItemLink,
+																			true,
+																			_List_Nil,
+																			_List_fromArray(
+																				[
+																					elm$html$Html$text('Manage Your Team')
+																				])),
+																			A2(
+																			surprisetalk$elm_bulma$Bulma$Components$menuList,
+																			_List_Nil,
+																			_List_fromArray(
+																				[
+																					A3(
+																					surprisetalk$elm_bulma$Bulma$Components$menuListItemLink,
+																					false,
+																					_List_Nil,
+																					_List_fromArray(
+																						[
+																							elm$html$Html$text('Members')
+																						])),
+																					A3(
+																					surprisetalk$elm_bulma$Bulma$Components$menuListItemLink,
+																					false,
+																					_List_Nil,
+																					_List_fromArray(
+																						[
+																							elm$html$Html$text('Plugins')
+																						])),
+																					A3(
+																					surprisetalk$elm_bulma$Bulma$Components$menuListItemLink,
+																					false,
+																					_List_Nil,
+																					_List_fromArray(
+																						[
+																							elm$html$Html$text('Add a member')
+																						]))
+																				]))
+																		])),
+																	A2(
+																	surprisetalk$elm_bulma$Bulma$Components$menuListItem,
+																	_List_Nil,
+																	_List_fromArray(
+																		[
+																			A3(
+																			surprisetalk$elm_bulma$Bulma$Components$menuListItemLink,
+																			false,
+																			_List_Nil,
+																			_List_fromArray(
+																				[
+																					elm$html$Html$text('Invitations')
+																				]))
+																		])),
+																	A2(
+																	surprisetalk$elm_bulma$Bulma$Components$menuListItem,
+																	_List_Nil,
+																	_List_fromArray(
+																		[
+																			A3(
+																			surprisetalk$elm_bulma$Bulma$Components$menuListItemLink,
+																			false,
+																			_List_Nil,
+																			_List_fromArray(
+																				[
+																					elm$html$Html$text('Cloud Storage Environment Settings')
+																				]))
+																		])),
+																	A2(
+																	surprisetalk$elm_bulma$Bulma$Components$menuListItem,
+																	_List_Nil,
+																	_List_fromArray(
+																		[
+																			A3(
+																			surprisetalk$elm_bulma$Bulma$Components$menuListItemLink,
+																			false,
+																			_List_Nil,
+																			_List_fromArray(
+																				[
+																					elm$html$Html$text('Authentication')
+																				]))
+																		]))
+																])),
+															A2(
+															surprisetalk$elm_bulma$Bulma$Components$menuLabel,
+															_List_Nil,
+															_List_fromArray(
+																[
+																	elm$html$Html$text('Transactions')
+																])),
+															A2(
+															surprisetalk$elm_bulma$Bulma$Components$menuList,
+															_List_Nil,
+															_List_fromArray(
+																[
+																	A2(
+																	surprisetalk$elm_bulma$Bulma$Components$menuListItem,
+																	_List_Nil,
+																	_List_fromArray(
+																		[
+																			A3(
+																			surprisetalk$elm_bulma$Bulma$Components$menuListItemLink,
+																			false,
+																			_List_Nil,
+																			_List_fromArray(
+																				[
+																					elm$html$Html$text('Payments')
+																				]))
+																		])),
+																	A2(
+																	surprisetalk$elm_bulma$Bulma$Components$menuListItem,
+																	_List_Nil,
+																	_List_fromArray(
+																		[
+																			A3(
+																			surprisetalk$elm_bulma$Bulma$Components$menuListItemLink,
+																			false,
+																			_List_Nil,
+																			_List_fromArray(
+																				[
+																					elm$html$Html$text('Transfers')
+																				]))
+																		])),
+																	A2(
+																	surprisetalk$elm_bulma$Bulma$Components$menuListItem,
+																	_List_Nil,
+																	_List_fromArray(
+																		[
+																			A3(
+																			surprisetalk$elm_bulma$Bulma$Components$menuListItemLink,
+																			false,
+																			_List_Nil,
+																			_List_fromArray(
+																				[
+																					elm$html$Html$text('Balance')
+																				]))
+																		]))
+																]))
+														]))
+												])),
+											A3(
+											surprisetalk$elm_bulma$Bulma$Columns$column,
+											surprisetalk$elm_bulma$Bulma$Columns$columnModifiers,
+											_List_Nil,
+											_List_fromArray(
+												[
+													A2(
+													surprisetalk$elm_bulma$Bulma$Components$panel,
+													_List_Nil,
+													_List_fromArray(
+														[
+															A2(
+															surprisetalk$elm_bulma$Bulma$Components$panelHeading,
+															_List_Nil,
+															_List_fromArray(
+																[
+																	elm$html$Html$text('Repositories')
+																])),
+															A3(
+															surprisetalk$elm_bulma$Bulma$Components$panelBlock,
+															false,
+															_List_Nil,
+															_List_fromArray(
+																[
+																	A4(surprisetalk$elm_bulma$Bulma$Form$controlInput, surprisetalk$elm_bulma$Bulma$Form$controlInputModifiers, _List_Nil, _List_Nil, _List_Nil)
+																])),
+															A2(
+															surprisetalk$elm_bulma$Bulma$Components$panelTabs,
+															_List_Nil,
+															_List_fromArray(
+																[
+																	A3(
+																	surprisetalk$elm_bulma$Bulma$Components$panelTab,
+																	false,
+																	_List_Nil,
+																	_List_fromArray(
+																		[
+																			elm$html$Html$text('All')
+																		])),
+																	A3(
+																	surprisetalk$elm_bulma$Bulma$Components$panelTab,
+																	true,
+																	_List_Nil,
+																	_List_fromArray(
+																		[
+																			elm$html$Html$text('Public')
+																		])),
+																	A3(
+																	surprisetalk$elm_bulma$Bulma$Components$panelTab,
+																	true,
+																	_List_Nil,
+																	_List_fromArray(
+																		[
+																			elm$html$Html$text('Private')
+																		])),
+																	A3(
+																	surprisetalk$elm_bulma$Bulma$Components$panelTab,
+																	true,
+																	_List_Nil,
+																	_List_fromArray(
+																		[
+																			elm$html$Html$text('Sources')
+																		])),
+																	A3(
+																	surprisetalk$elm_bulma$Bulma$Components$panelTab,
+																	true,
+																	_List_Nil,
+																	_List_fromArray(
+																		[
+																			elm$html$Html$text('Forks')
+																		]))
+																])),
+															A5(
+															surprisetalk$elm_bulma$Bulma$Components$panelLinkWithIcon,
+															true,
+															_List_Nil,
+															_List_Nil,
+															_List_fromArray(
+																[
+																	A2(
+																	elm$html$Html$i,
+																	_List_fromArray(
+																		[
+																			elm$html$Html$Attributes$class('fa fa-book')
+																		]),
+																	_List_Nil)
+																]),
+															_List_fromArray(
+																[
+																	elm$html$Html$text('bulma')
+																])),
+															A5(
+															surprisetalk$elm_bulma$Bulma$Components$panelLinkWithIcon,
+															false,
+															_List_Nil,
+															_List_Nil,
+															_List_fromArray(
+																[
+																	A2(
+																	elm$html$Html$i,
+																	_List_fromArray(
+																		[
+																			elm$html$Html$Attributes$class('fa fa-book')
+																		]),
+																	_List_Nil)
+																]),
+															_List_fromArray(
+																[
+																	elm$html$Html$text('marksheet')
+																])),
+															A5(
+															surprisetalk$elm_bulma$Bulma$Components$panelLinkWithIcon,
+															false,
+															_List_Nil,
+															_List_Nil,
+															_List_fromArray(
+																[
+																	A2(
+																	elm$html$Html$i,
+																	_List_fromArray(
+																		[
+																			elm$html$Html$Attributes$class('fa fa-book')
+																		]),
+																	_List_Nil)
+																]),
+															_List_fromArray(
+																[
+																	elm$html$Html$text('minireset.css')
+																])),
+															A5(
+															surprisetalk$elm_bulma$Bulma$Components$panelLinkWithIcon,
+															false,
+															_List_Nil,
+															_List_Nil,
+															_List_fromArray(
+																[
+																	A2(
+																	elm$html$Html$i,
+																	_List_fromArray(
+																		[
+																			elm$html$Html$Attributes$class('fa fa-book')
+																		]),
+																	_List_Nil)
+																]),
+															_List_fromArray(
+																[
+																	elm$html$Html$text('jgthms.github.io')
+																])),
+															A5(
+															surprisetalk$elm_bulma$Bulma$Components$panelLinkWithIcon,
+															false,
+															_List_Nil,
+															_List_Nil,
+															_List_fromArray(
+																[
+																	A2(
+																	elm$html$Html$i,
+																	_List_fromArray(
+																		[
+																			elm$html$Html$Attributes$class('fa fa-code-fork')
+																		]),
+																	_List_Nil)
+																]),
+															_List_fromArray(
+																[
+																	elm$html$Html$text('daniellowtw/infBoard')
+																])),
+															A5(
+															surprisetalk$elm_bulma$Bulma$Components$panelLinkWithIcon,
+															false,
+															_List_Nil,
+															_List_Nil,
+															_List_fromArray(
+																[
+																	A2(
+																	elm$html$Html$i,
+																	_List_fromArray(
+																		[
+																			elm$html$Html$Attributes$class('fa fa-code-fork')
+																		]),
+																	_List_Nil)
+																]),
+															_List_fromArray(
+																[
+																	elm$html$Html$text('mojs')
+																])),
+															A4(
+															surprisetalk$elm_bulma$Bulma$Components$panelCheckbox,
+															false,
+															_List_Nil,
+															_List_Nil,
+															_List_fromArray(
+																[
+																	elm$html$Html$text('Remember Me')
+																])),
+															A3(
+															surprisetalk$elm_bulma$Bulma$Components$panelBlock,
+															false,
+															_List_Nil,
+															_List_fromArray(
+																[
+																	A3(
+																	surprisetalk$elm_bulma$Bulma$Elements$button,
+																	_Utils_update(
+																		surprisetalk$elm_bulma$Bulma$Elements$buttonModifiers,
+																		{color: surprisetalk$elm_bulma$Bulma$Modifiers$Link}),
+																	_List_fromArray(
+																		[surprisetalk$elm_bulma$Bulma$Modifiers$fullWidth]),
+																	_List_fromArray(
+																		[
+																			elm$html$Html$text('Reset all filters')
+																		]))
+																]))
+														]))
+												]))
+										]))
+								]))
+						]))
+				]))
+		]));
+var elm$html$Html$Attributes$href = function (url) {
+	return A2(
+		elm$html$Html$Attributes$stringProperty,
+		'href',
+		_VirtualDom_noJavaScriptUri(url));
+};
 var surprisetalk$elm_bulma$Bulma$Classes$footer = elm$html$Html$Attributes$class('footer');
 var surprisetalk$elm_bulma$Bulma$Layout$footer = A2(
 	surprisetalk$elm_bulma$Helpers$node,
 	'footer',
 	_List_fromArray(
 		[surprisetalk$elm_bulma$Bulma$Classes$footer]));
-var surprisetalk$elm_bulma$Bulma$Modifiers$Standard = {$: 'Standard'};
 var surprisetalk$elm_bulma$Bulma$Classes$hasTextCentered = elm$html$Html$Attributes$class('has-text-centered');
 var surprisetalk$elm_bulma$Bulma$Modifiers$Typography$textCentered = surprisetalk$elm_bulma$Bulma$Classes$hasTextCentered;
 var author$project$Example$exampleFooter = A2(
@@ -4934,66 +8821,9 @@ var author$project$Example$exampleFooter = A2(
 		]));
 var surprisetalk$elm_bulma$Bulma$Elements$H1 = {$: 'H1'};
 var surprisetalk$elm_bulma$Bulma$Elements$H2 = {$: 'H2'};
-var surprisetalk$elm_bulma$Bulma$Classes$is1 = elm$html$Html$Attributes$class('is-1');
-var surprisetalk$elm_bulma$Bulma$Classes$is2 = elm$html$Html$Attributes$class('is-2');
-var surprisetalk$elm_bulma$Bulma$Classes$is3 = elm$html$Html$Attributes$class('is-3');
-var surprisetalk$elm_bulma$Bulma$Classes$is4 = elm$html$Html$Attributes$class('is-4');
-var surprisetalk$elm_bulma$Bulma$Classes$is5 = elm$html$Html$Attributes$class('is-5');
-var surprisetalk$elm_bulma$Bulma$Classes$is6 = elm$html$Html$Attributes$class('is-6');
-var surprisetalk$elm_bulma$Bulma$Classes$title = elm$html$Html$Attributes$class('title');
-var surprisetalk$elm_bulma$Bulma$Elements$title = function (size) {
-	return A2(
-		surprisetalk$elm_bulma$Helpers$node,
-		function () {
-			switch (size.$) {
-				case 'H1':
-					return 'h1';
-				case 'H2':
-					return 'h2';
-				case 'H3':
-					return 'h3';
-				case 'H4':
-					return 'h4';
-				case 'H5':
-					return 'h5';
-				default:
-					return 'h6';
-			}
-		}(),
-		_List_fromArray(
-			[
-				surprisetalk$elm_bulma$Bulma$Classes$title,
-				function () {
-				switch (size.$) {
-					case 'H1':
-						return surprisetalk$elm_bulma$Bulma$Classes$is1;
-					case 'H2':
-						return surprisetalk$elm_bulma$Bulma$Classes$is2;
-					case 'H3':
-						return surprisetalk$elm_bulma$Bulma$Classes$is3;
-					case 'H4':
-						return surprisetalk$elm_bulma$Bulma$Classes$is4;
-					case 'H5':
-						return surprisetalk$elm_bulma$Bulma$Classes$is5;
-					default:
-						return surprisetalk$elm_bulma$Bulma$Classes$is6;
-				}
-			}()
-			]));
-};
 var surprisetalk$elm_bulma$Bulma$Classes$hero = elm$html$Html$Attributes$class('hero');
-var surprisetalk$elm_bulma$Bulma$Classes$isBlack = elm$html$Html$Attributes$class('is-black');
 var surprisetalk$elm_bulma$Bulma$Classes$isBold = elm$html$Html$Attributes$class('is-bold');
-var surprisetalk$elm_bulma$Bulma$Classes$isDanger = elm$html$Html$Attributes$class('is-danger');
-var surprisetalk$elm_bulma$Bulma$Classes$isDark = elm$html$Html$Attributes$class('is-dark');
 var surprisetalk$elm_bulma$Bulma$Classes$isFullHeight = elm$html$Html$Attributes$class('is-fullheight');
-var surprisetalk$elm_bulma$Bulma$Classes$isInfo = elm$html$Html$Attributes$class('is-info');
-var surprisetalk$elm_bulma$Bulma$Classes$isLight = elm$html$Html$Attributes$class('is-light');
-var surprisetalk$elm_bulma$Bulma$Classes$isLink = elm$html$Html$Attributes$class('is-link');
-var surprisetalk$elm_bulma$Bulma$Classes$isPrimary = elm$html$Html$Attributes$class('is-primary');
-var surprisetalk$elm_bulma$Bulma$Classes$isSuccess = elm$html$Html$Attributes$class('is-success');
-var surprisetalk$elm_bulma$Bulma$Classes$isWarning = elm$html$Html$Attributes$class('is-warning');
-var surprisetalk$elm_bulma$Bulma$Classes$isWhite = elm$html$Html$Attributes$class('is-white');
 var surprisetalk$elm_bulma$Bulma$Layout$hero = function (_n0) {
 	var bold = _n0.bold;
 	var size = _n0.size;
@@ -5057,10 +8887,7 @@ var surprisetalk$elm_bulma$Bulma$Layout$heroBody = A2(
 	'div',
 	_List_fromArray(
 		[surprisetalk$elm_bulma$Bulma$Classes$heroBody]));
-var surprisetalk$elm_bulma$Bulma$Modifiers$Default = {$: 'Default'};
-var surprisetalk$elm_bulma$Bulma$Modifiers$Small = {$: 'Small'};
 var surprisetalk$elm_bulma$Bulma$Layout$heroModifiers = {bold: false, color: surprisetalk$elm_bulma$Bulma$Modifiers$Default, size: surprisetalk$elm_bulma$Bulma$Modifiers$Small};
-var surprisetalk$elm_bulma$Bulma$Modifiers$Info = {$: 'Info'};
 var surprisetalk$elm_bulma$Bulma$Modifiers$Medium = {$: 'Medium'};
 var author$project$Example$exampleHero = A3(
 	surprisetalk$elm_bulma$Bulma$Layout$hero,
@@ -5124,7 +8951,7 @@ var author$project$Example$view = function (model) {
 		elm$html$Html$main_,
 		_List_Nil,
 		_List_fromArray(
-			[surprisetalk$elm_bulma$Bulma$CDN$stylesheet, author$project$Example$fontAwesomeCDN, author$project$Example$exampleHero, author$project$Example$exampleFooter]));
+			[surprisetalk$elm_bulma$Bulma$CDN$stylesheet, author$project$Example$fontAwesomeCDN, author$project$Example$exampleHero, author$project$Example$exampleElementsAndComponents, author$project$Example$exampleFooter]));
 };
 var elm$core$Platform$Cmd$batch = _Platform_batch;
 var elm$core$Platform$Cmd$none = elm$core$Platform$Cmd$batch(_List_Nil);
@@ -5153,75 +8980,6 @@ var elm$core$Task$Perform = function (a) {
 };
 var elm$core$Task$succeed = _Scheduler_succeed;
 var elm$core$Task$init = elm$core$Task$succeed(_Utils_Tuple0);
-var elm$core$List$foldrHelper = F4(
-	function (fn, acc, ctr, ls) {
-		if (!ls.b) {
-			return acc;
-		} else {
-			var a = ls.a;
-			var r1 = ls.b;
-			if (!r1.b) {
-				return A2(fn, a, acc);
-			} else {
-				var b = r1.a;
-				var r2 = r1.b;
-				if (!r2.b) {
-					return A2(
-						fn,
-						a,
-						A2(fn, b, acc));
-				} else {
-					var c = r2.a;
-					var r3 = r2.b;
-					if (!r3.b) {
-						return A2(
-							fn,
-							a,
-							A2(
-								fn,
-								b,
-								A2(fn, c, acc)));
-					} else {
-						var d = r3.a;
-						var r4 = r3.b;
-						var res = (ctr > 500) ? A3(
-							elm$core$List$foldl,
-							fn,
-							acc,
-							elm$core$List$reverse(r4)) : A4(elm$core$List$foldrHelper, fn, acc, ctr + 1, r4);
-						return A2(
-							fn,
-							a,
-							A2(
-								fn,
-								b,
-								A2(
-									fn,
-									c,
-									A2(fn, d, res))));
-					}
-				}
-			}
-		}
-	});
-var elm$core$List$foldr = F3(
-	function (fn, acc, ls) {
-		return A4(elm$core$List$foldrHelper, fn, acc, 0, ls);
-	});
-var elm$core$List$map = F2(
-	function (f, xs) {
-		return A3(
-			elm$core$List$foldr,
-			F2(
-				function (x, acc) {
-					return A2(
-						elm$core$List$cons,
-						f(x),
-						acc);
-				}),
-			_List_Nil,
-			xs);
-	});
 var elm$core$Task$andThen = _Scheduler_andThen;
 var elm$core$Task$map = F2(
 	function (func, taskA) {

@@ -42,7 +42,7 @@ view model
     -- , exampleColumns
     -- , exampleTiles
     -- , exampleLevel
-    -- , exampleElementsAndComponents
+    , exampleElementsAndComponents
     -- , exampleMediaObject
     , exampleFooter
     ]
